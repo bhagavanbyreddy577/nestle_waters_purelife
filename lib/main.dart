@@ -4,6 +4,7 @@ void main() {
   runApp(const MyApp());
 }
 
+// This is test comment to commit
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Hello'),
+      home: const MyHomePage(title: 'Hello Nestle User!'),
     );
   }
 }
