@@ -43,3 +43,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Stores build system files related to external native builds, particularly when using CMake or a custom C++ build system.
+**/.cxx
