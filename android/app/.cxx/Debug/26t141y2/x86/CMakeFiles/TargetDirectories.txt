@@ -1,0 +1,2 @@
+/Users/2340940/AndroidStudioProjects/NestleProjects/nestle_waters_purelife/android/app/.cxx/Debug/26t141y2/x86/CMakeFiles/edit_cache.dir
+/Users/2340940/AndroidStudioProjects/NestleProjects/nestle_waters_purelife/android/app/.cxx/Debug/26t141y2/x86/CMakeFiles/rebuild_cache.dir
