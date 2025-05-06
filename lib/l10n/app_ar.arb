@@ -1,5 +1,6 @@
 
 {
+  "@@locale": "ar",
   "language": "عربي",
   "helloMessage": "مرحبا {username}"
 }
