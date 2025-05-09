@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:nestle_waters_purelife/utils/helpers/helpers.dart';
-import 'package:nestle_waters_purelife/utils/models/country_code_data.dart';
+import 'package:nestle_waters_purelife/utils/helpers/helper_classes/country_code_data_helper.dart';
 
 class NCountryCodePicker extends StatefulWidget {
   /// The currently selected country
@@ -68,7 +67,7 @@ class NCountryCodePicker extends StatefulWidget {
     this.showLabel = true,
     this.label = 'Country',
     this.labelStyle,
-    this.countries = NHelpers.countryCodeData,
+    this.countries = CountryCodeDataHelper.countryCodeData,
     this.initialText = 'Country',
     this.countryTextStyle,
     this.dropdownColor,

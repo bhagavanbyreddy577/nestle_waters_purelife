@@ -10,10 +10,23 @@ import 'package:nestle_waters_purelife/core/services/hive/hive_service.dart';
 import 'package:nestle_waters_purelife/core/services/hive/hive_service_impl.dart';
 import 'package:nestle_waters_purelife/core/services/http/http_client_service.dart';
 import 'package:nestle_waters_purelife/core/services/http/http_client_service_impl.dart';
+import 'package:nestle_waters_purelife/core/services/sharedPreferences/shared_pref_service.dart';
+import 'package:nestle_waters_purelife/core/services/sharedPreferences/shared_pref_service_impl.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final sl = GetIt.instance;
 
 Future<void> appDependencies() async {
+
+  // External packages
+  final sharedPrefs = await SharedPreferences.getInstance();
+  sl.registerLazySingleton(() => sharedPrefs);
+
+  // Local Storage Service
+  sl.registerLazySingleton<SharedPrefService>(
+        () => SharedPrefServiceImpl(sl()),
+  );
+
   // Logger
   sl.registerLazySingleton(() => Logger());
 
@@ -30,6 +43,9 @@ Future<void> appDependencies() async {
   // Register GraphQL Service
   sl.registerLazySingleton<GraphQLService>(() => GraphQLServiceImpl(sl()));
 
+  // Register http client
+  sl.registerLazySingleton<http.Client>(() => http.Client());
+
   // Register http client service
   sl.registerLazySingleton<HttpClientService>(
       () => HttpClientServiceImpl(sl()));
@@ -37,9 +53,6 @@ Future<void> appDependencies() async {
   // Register Hive service
   sl.registerLazySingletonAsync<HiveService>(
       () async => HiveServiceImpl(await getHiveBox()));
-
-  // Register http client
-  sl.registerLazySingleton<http.Client>(() => http.Client());
 }
 
 Future<Box> getHiveBox() async {
