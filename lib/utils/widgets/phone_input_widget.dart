@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:nestle_waters_purelife/utils/helpers/helpers.dart';
-import 'package:nestle_waters_purelife/utils/models/country_code_data.dart';
+import 'package:nestle_waters_purelife/utils/helpers/helper_classes/country_code_data_helper.dart';
 import 'package:nestle_waters_purelife/utils/widgets/country_code_picker.dart';
 import 'package:nestle_waters_purelife/utils/widgets/phone_number_text_field.dart';
 
@@ -97,7 +96,7 @@ class NPhoneInputWidget extends StatefulWidget {
     this.borderColor,
     this.fillColor,
     this.initialCountry,
-    this.countries = NHelpers.countryCodeData,
+    this.countries = CountryCodeDataHelper.countryCodeData,
     this.onPhoneNumberChanged,
     this.autoFormat = true,
     this.validationMode,

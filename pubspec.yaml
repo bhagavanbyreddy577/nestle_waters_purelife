@@ -36,8 +36,8 @@ dependencies:
   dartz: ^0.10.1
   # Print logs
   logger: ^2.5.0
-  # Launch url
-  url_launcher: ^6.3.1
+  # Launch url in web view
+  webview_flutter: ^4.11.0
   # Internet connectivity check
   connectivity_plus: ^6.1.4
   # Annotations for the freezed code-generator
@@ -46,6 +46,17 @@ dependencies:
   json_annotation: ^4.9.0
   # Screens navigation
   go_router: ^15.1.1
+  # Keep internet image in the cache
+  cached_network_image: ^3.4.1
+  # Video player
+  video_player: ^2.9.5
+  # Cache data locally
+  shared_preferences: ^2.5.3
+  # Picking images from the image library
+  image_picker: ^1.1.2
+  # Request permissions and check their status
+  permission_handler: ^12.0.0+1
+
 
 dependency_overrides:
   source_gen: ^2.0.0
@@ -72,6 +83,9 @@ flutter:
   uses-material-design: true
 
   #--------------- LOCAL ASSETS ------------------#
+
+  assets:
+  - assets/images/user.png
 
   #--------------- LOCAL FONTS ------------------#
 

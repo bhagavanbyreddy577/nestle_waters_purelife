@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nestle_waters_purelife/l10n/generated/app_localizations.dart';
-import 'core/routes/app_router.dart';
+import 'core/routes/app_routes.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key, required this.env});
@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
         title: 'Nestle Waters App',
-        routerConfig: appRouter,
+        routerConfig: AppRoutes.createRouter(),
         debugShowCheckedModeBanner: false,
         supportedLocales: AppLocalizations.supportedLocales,
         localizationsDelegates: AppLocalizations.localizationsDelegates);
