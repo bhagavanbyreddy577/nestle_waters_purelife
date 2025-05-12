@@ -15,7 +15,7 @@ class _TempScreenState extends State<TempScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Custom Progress Demo'),
+        title: const Text('Test'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: SingleChildScrollView(

@@ -56,6 +56,14 @@ dependencies:
   image_picker: ^1.1.2
   # Request permissions and check their status
   permission_handler: ^12.0.0+1
+  # Load configuration at runtime from a .env file
+  flutter_dotenv: ^5.2.1
+  # Encrypt the data of .env
+  envied: ^1.1.1
+  # On-device authentication
+  local_auth: ^2.3.0
+  # Automatically generate a shimmer for widget
+  redacted: ^1.0.13
 
 
 dependency_overrides:
@@ -76,6 +84,8 @@ dev_dependencies:
   freezed: ^3.0.6
   # Generate to/from JSON code
   json_serializable: ^6.9.5
+  # Generator for the Envied package
+  envied_generator: ^1.1.1
 
 
 flutter:
@@ -86,6 +96,9 @@ flutter:
 
   assets:
   - assets/images/user.png
+  - dev.env
+  - stage.env
+  - prod.env
 
   #--------------- LOCAL FONTS ------------------#
 

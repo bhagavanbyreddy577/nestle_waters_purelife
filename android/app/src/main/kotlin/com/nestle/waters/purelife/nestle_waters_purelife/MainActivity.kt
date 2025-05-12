@@ -1,5 +1,5 @@
 package com.nestle.waters.purelife.nestle_waters_purelife
 
-import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterFragmentActivity
 
-class MainActivity: FlutterActivity()
+class MainActivity: FlutterFragmentActivity()
