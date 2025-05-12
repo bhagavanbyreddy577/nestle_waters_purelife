@@ -45,4 +45,13 @@ app.*.map.json
 /android/app/release
 
 # Stores build system files related to external native builds, particularly when using CMake or a custom C++ build system.
-**/.cxx
+/android/app/.cxx
+# Stores sensitive data like Tokens, Base URLs etc..
+dev.env
+stage.env
+prod.env
+# Stores encrypted data of env files
+dev_env.g.dart
+stage_env.g.dart
+prod_env.g.dart
+
