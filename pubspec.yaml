@@ -64,7 +64,12 @@ dependencies:
   local_auth: ^2.3.0
   # Automatically generate a shimmer for widget
   redacted: ^1.0.13
-
+  # Connect to multiple Firebase apps
+  firebase_core: ^3.13.0
+  # Crash reports in Firebase console
+  firebase_crashlytics: ^4.3.5
+  # Configure flags remotely in firebase
+  firebase_remote_config: ^5.4.3
 
 dependency_overrides:
   source_gen: ^2.0.0
