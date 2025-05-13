@@ -583,7 +583,7 @@ class _ExampleScreenState extends State<ExampleScreen> {
             onLoadMore: _dataSource.loadNextPage,
             onRefresh: _dataSource.refresh,
 
-            // Optional custom widgets
+            // Optional custom screens
             emptyWidget: const Center(
               child: Text('No products available', style: TextStyle(fontSize: 18)),
             ),

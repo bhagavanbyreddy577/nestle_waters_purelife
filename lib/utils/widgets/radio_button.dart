@@ -107,7 +107,7 @@ class NRadioButton<T> extends StatelessWidget {
       ),
     );
 
-    // Arrange the widgets based on titleFirst property
+    // Arrange the screens based on titleFirst property
     List<Widget> rowChildren = titleFirst
         ? [titleWidget, SizedBox(width: spaceBetween), radioButton]
         : [radioButton, SizedBox(width: spaceBetween), titleWidget];

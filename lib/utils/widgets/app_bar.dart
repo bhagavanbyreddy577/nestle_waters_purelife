@@ -19,7 +19,7 @@ class NAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? title;
 
   /// A list of Widgets to display in a row after the [title] widget.
-  /// Typically these widgets are [IconButton]s.
+  /// Typically these screens are [IconButton]s.
   final List<Widget>? actions;
 
   /// A widget to display at the bottom of the app bar.
