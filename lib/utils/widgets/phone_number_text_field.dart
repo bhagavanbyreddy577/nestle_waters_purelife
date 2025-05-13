@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:nestle_waters_purelife/utils/models/country_code_data.dart';
+import 'package:nestle_waters_purelife/utils/helpers/helper_classes/country_code_data_helper.dart';
 
 class NPhoneNumberTextField extends StatefulWidget {
   /// Text editing controller to manage the text input
