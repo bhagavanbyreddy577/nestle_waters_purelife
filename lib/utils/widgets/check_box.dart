@@ -128,7 +128,7 @@ class _NCheckboxState extends State<NCheckbox> {
       ),
     );
 
-    // Arrange the widgets based on titleFirst property
+    // Arrange the screens based on titleFirst property
     List<Widget> rowChildren = widget.titleFirst
         ? [titleWidget, SizedBox(width: widget.spaceBetween), checkbox]
         : [checkbox, SizedBox(width: widget.spaceBetween), titleWidget];

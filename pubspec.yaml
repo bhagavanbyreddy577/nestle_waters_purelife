@@ -70,6 +70,10 @@ dependencies:
   firebase_crashlytics: ^4.3.5
   # Configure flags remotely in firebase
   firebase_remote_config: ^5.4.3
+  # Provides a Google Maps widget
+  google_maps_flutter: ^2.12.1
+  # Provides location services
+  geolocator: ^14.0.0
 
 dependency_overrides:
   source_gen: ^2.0.0
