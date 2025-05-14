@@ -16,7 +16,9 @@ migrate_working_dir/
 *.iml
 *.ipr
 *.iws
-.idea/
+
+# Created runConfiguration to maintain build flavours in .idea. So removing from gitignore
+#.idea/
 
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
