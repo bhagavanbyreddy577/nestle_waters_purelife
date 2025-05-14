@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-/// A set of custom progress bar widgets for both linear and circular variants.
-/// These widgets are highly customizable and can be reused throughout the app.
+/// A set of custom progress bar screens for both linear and circular variants.
+/// These screens are highly customizable and can be reused throughout the app.
 
 /// Custom Linear Progress Bar Widget
 /// 
