@@ -43,14 +43,14 @@ android {
         production {
             dimension 'default'
             resValue "string", "app_name", "NestleWaters"
-            target "lib/main_production.dart"
+            flutter.target "lib/main_production.dart"
         }
         development {
             dimension 'default'
             applicationIdSuffix '.dev'
             versionNameSuffix '.dev'
             resValue "string", "app_name", "NestleWaters.Dev"
-            target "lib/main_development.dart"
+            flutter.target "lib/main_development.dart"
         }
 
         staging {
@@ -58,7 +58,7 @@ android {
             applicationIdSuffix '.stg'
             versionNameSuffix '.stg'
             resValue "string", "app_name", "NestleWaters.Stg"
-            target "lib/main_staging.dart"
+            flutter.target "lib/main_staging.dart"
         }
     }
 
