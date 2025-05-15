@@ -84,6 +84,8 @@ dependencies:
   pushwoosh_flutter: ^2.3.12
   # App analytics
   adjust_sdk: ^5.1.0
+  # State management
+  provider: ^6.1.5
 
 dependency_overrides:
   source_gen: ^2.0.0

@@ -4,7 +4,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'app_state_data.dart';
+part of 'location_data.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,28 +14,28 @@ part of 'app_state_data.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$AppStateData {
+mixin _$LocationData {
   String get country; // TODO: Need to replace with user's selected country
   String get region; // TODO: Need to replace with user's selected region
   double? get latitude;
   double? get longitude;
 
-  /// Create a copy of AppStateData
+  /// Create a copy of LocationData
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $AppStateDataCopyWith<AppStateData> get copyWith =>
-      _$AppStateDataCopyWithImpl<AppStateData>(
-          this as AppStateData, _$identity);
+  $LocationDataCopyWith<LocationData> get copyWith =>
+      _$LocationDataCopyWithImpl<LocationData>(
+          this as LocationData, _$identity);
 
-  /// Serializes this AppStateData to a JSON map.
+  /// Serializes this LocationData to a JSON map.
   Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is AppStateData &&
+            other is LocationData &&
             (identical(other.country, country) || other.country == country) &&
             (identical(other.region, region) || other.region == region) &&
             (identical(other.latitude, latitude) ||
@@ -51,28 +51,28 @@ mixin _$AppStateData {
 
   @override
   String toString() {
-    return 'AppStateData(country: $country, region: $region, latitude: $latitude, longitude: $longitude)';
+    return 'LocationData(country: $country, region: $region, latitude: $latitude, longitude: $longitude)';
   }
 }
 
 /// @nodoc
-abstract mixin class $AppStateDataCopyWith<$Res> {
-  factory $AppStateDataCopyWith(
-          AppStateData value, $Res Function(AppStateData) _then) =
-      _$AppStateDataCopyWithImpl;
+abstract mixin class $LocationDataCopyWith<$Res> {
+  factory $LocationDataCopyWith(
+          LocationData value, $Res Function(LocationData) _then) =
+      _$LocationDataCopyWithImpl;
   @useResult
   $Res call(
       {String country, String region, double? latitude, double? longitude});
 }
 
 /// @nodoc
-class _$AppStateDataCopyWithImpl<$Res> implements $AppStateDataCopyWith<$Res> {
-  _$AppStateDataCopyWithImpl(this._self, this._then);
+class _$LocationDataCopyWithImpl<$Res> implements $LocationDataCopyWith<$Res> {
+  _$LocationDataCopyWithImpl(this._self, this._then);
 
-  final AppStateData _self;
-  final $Res Function(AppStateData) _then;
+  final LocationData _self;
+  final $Res Function(LocationData) _then;
 
-  /// Create a copy of AppStateData
+  /// Create a copy of LocationData
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -105,14 +105,14 @@ class _$AppStateDataCopyWithImpl<$Res> implements $AppStateDataCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _AppStateData implements AppStateData {
-  const _AppStateData(
+class _LocationData implements LocationData {
+  const _LocationData(
       {this.country = 'United Arab Emirates',
       this.region = 'Abu Dhabi',
       this.latitude,
       this.longitude});
-  factory _AppStateData.fromJson(Map<String, dynamic> json) =>
-      _$AppStateDataFromJson(json);
+  factory _LocationData.fromJson(Map<String, dynamic> json) =>
+      _$LocationDataFromJson(json);
 
   @override
   @JsonKey()
@@ -127,17 +127,17 @@ class _AppStateData implements AppStateData {
   @override
   final double? longitude;
 
-  /// Create a copy of AppStateData
+  /// Create a copy of LocationData
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AppStateDataCopyWith<_AppStateData> get copyWith =>
-      __$AppStateDataCopyWithImpl<_AppStateData>(this, _$identity);
+  _$LocationDataCopyWith<_LocationData> get copyWith =>
+      __$LocationDataCopyWithImpl<_LocationData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$AppStateDataToJson(
+    return _$LocationDataToJson(
       this,
     );
   }
@@ -146,7 +146,7 @@ class _AppStateData implements AppStateData {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AppStateData &&
+            other is _LocationData &&
             (identical(other.country, country) || other.country == country) &&
             (identical(other.region, region) || other.region == region) &&
             (identical(other.latitude, latitude) ||
@@ -162,16 +162,16 @@ class _AppStateData implements AppStateData {
 
   @override
   String toString() {
-    return 'AppStateData(country: $country, region: $region, latitude: $latitude, longitude: $longitude)';
+    return 'LocationData(country: $country, region: $region, latitude: $latitude, longitude: $longitude)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$AppStateDataCopyWith<$Res>
-    implements $AppStateDataCopyWith<$Res> {
-  factory _$AppStateDataCopyWith(
-          _AppStateData value, $Res Function(_AppStateData) _then) =
-      __$AppStateDataCopyWithImpl;
+abstract mixin class _$LocationDataCopyWith<$Res>
+    implements $LocationDataCopyWith<$Res> {
+  factory _$LocationDataCopyWith(
+          _LocationData value, $Res Function(_LocationData) _then) =
+      __$LocationDataCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -179,14 +179,14 @@ abstract mixin class _$AppStateDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AppStateDataCopyWithImpl<$Res>
-    implements _$AppStateDataCopyWith<$Res> {
-  __$AppStateDataCopyWithImpl(this._self, this._then);
+class __$LocationDataCopyWithImpl<$Res>
+    implements _$LocationDataCopyWith<$Res> {
+  __$LocationDataCopyWithImpl(this._self, this._then);
 
-  final _AppStateData _self;
-  final $Res Function(_AppStateData) _then;
+  final _LocationData _self;
+  final $Res Function(_LocationData) _then;
 
-  /// Create a copy of AppStateData
+  /// Create a copy of LocationData
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -196,7 +196,7 @@ class __$AppStateDataCopyWithImpl<$Res>
     Object? latitude = freezed,
     Object? longitude = freezed,
   }) {
-    return _then(_AppStateData(
+    return _then(_LocationData(
       country: null == country
           ? _self.country
           : country // ignore: cast_nullable_to_non_nullable

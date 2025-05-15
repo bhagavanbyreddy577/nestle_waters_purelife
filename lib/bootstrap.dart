@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:nestle_waters_purelife/my_app.dart';
-import 'package:nestle_waters_purelife/core/di/dependencies.dart';
-import 'package:nestle_waters_purelife/core/services/hive/hive_setup.dart';
+import 'package:nestle_waters_purelife/utils/helpers/helper_functions.dart';
 
 void bootstrap(String env) async{
 
@@ -17,9 +16,8 @@ void bootstrap(String env) async{
     await dotenv.load(fileName: "prod.env");
   }
 
-
-  await setupHive();
-  await setupDependencies();
+  await NHelperFunctions.setupHive();
+  await NHelperFunctions.setupAllDependencies();
 
   runApp(MyApp(env: env));
 }
