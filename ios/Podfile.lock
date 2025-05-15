@@ -1,4 +1,12 @@
 PODS:
+  - Adjust (5.1.1):
+    - Adjust/Adjust (= 5.1.1)
+  - Adjust/Adjust (5.1.1):
+    - AdjustSignature (= 3.35.2)
+  - adjust_sdk (5.1.1):
+    - Adjust (= 5.1.1)
+    - Flutter
+  - AdjustSignature (3.35.2)
   - connectivity_plus (0.0.1):
     - Flutter
   - Firebase/CoreOnly (11.10.0):
@@ -102,14 +110,35 @@ PODS:
     - nanopb/encode (= 3.30910.0)
   - nanopb/decode (3.30910.0)
   - nanopb/encode (3.30910.0)
+  - OneTrust-CMP-XCFramework (202504.1.0.0)
+  - onetrust_publishers_native_cmp (202504.1.0.0):
+    - Flutter
+    - OneTrust-CMP-XCFramework (~> 202504.1.0.0)
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
+  - pay_ios (0.0.1):
+    - Flutter
   - permission_handler_apple (9.3.0):
     - Flutter
   - PromisesObjC (2.4.0)
   - PromisesSwift (2.4.0):
     - PromisesObjC (= 2.4.0)
+  - pushwoosh_flutter (2.3.12):
+    - Flutter
+    - PushwooshXCFramework (= 6.8.4)
+  - PushwooshXCFramework (6.8.4):
+    - PushwooshXCFramework/Core (= 6.8.4)
+  - PushwooshXCFramework/Core (6.8.4):
+    - PushwooshXCFramework/PushwooshBridge
+    - PushwooshXCFramework/PushwooshCore
+    - PushwooshXCFramework/PushwooshLiveActivities
+  - PushwooshXCFramework/PushwooshBridge (6.8.4):
+    - PushwooshXCFramework/PushwooshCore
+  - PushwooshXCFramework/PushwooshCore (6.8.4)
+  - PushwooshXCFramework/PushwooshLiveActivities (6.8.4):
+    - PushwooshXCFramework/PushwooshBridge
+    - PushwooshXCFramework/PushwooshCore
   - shared_preferences_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
@@ -124,6 +153,7 @@ PODS:
     - FlutterMacOS
 
 DEPENDENCIES:
+  - adjust_sdk (from `.symlinks/plugins/adjust_sdk/ios`)
   - connectivity_plus (from `.symlinks/plugins/connectivity_plus/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_crashlytics (from `.symlinks/plugins/firebase_crashlytics/ios`)
@@ -133,8 +163,11 @@ DEPENDENCIES:
   - google_maps_flutter_ios (from `.symlinks/plugins/google_maps_flutter_ios/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - local_auth_darwin (from `.symlinks/plugins/local_auth_darwin/darwin`)
+  - onetrust_publishers_native_cmp (from `.symlinks/plugins/onetrust_publishers_native_cmp/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
+  - pay_ios (from `.symlinks/plugins/pay_ios/ios`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
+  - pushwoosh_flutter (from `.symlinks/plugins/pushwoosh_flutter/ios`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
   - sqflite_darwin (from `.symlinks/plugins/sqflite_darwin/darwin`)
   - video_player_avfoundation (from `.symlinks/plugins/video_player_avfoundation/darwin`)
@@ -142,6 +175,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Adjust
+    - AdjustSignature
     - Firebase
     - FirebaseABTesting
     - FirebaseCore
@@ -158,10 +193,14 @@ SPEC REPOS:
     - GoogleMaps
     - GoogleUtilities
     - nanopb
+    - OneTrust-CMP-XCFramework
     - PromisesObjC
     - PromisesSwift
+    - PushwooshXCFramework
 
 EXTERNAL SOURCES:
+  adjust_sdk:
+    :path: ".symlinks/plugins/adjust_sdk/ios"
   connectivity_plus:
     :path: ".symlinks/plugins/connectivity_plus/ios"
   firebase_core:
@@ -180,10 +219,16 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/image_picker_ios/ios"
   local_auth_darwin:
     :path: ".symlinks/plugins/local_auth_darwin/darwin"
+  onetrust_publishers_native_cmp:
+    :path: ".symlinks/plugins/onetrust_publishers_native_cmp/ios"
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/darwin"
+  pay_ios:
+    :path: ".symlinks/plugins/pay_ios/ios"
   permission_handler_apple:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
+  pushwoosh_flutter:
+    :path: ".symlinks/plugins/pushwoosh_flutter/ios"
   shared_preferences_foundation:
     :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
   sqflite_darwin:
@@ -194,6 +239,9 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/webview_flutter_wkwebview/darwin"
 
 SPEC CHECKSUMS:
+  Adjust: 5f5e998cf1446d44d93f91ec8b7b7dd40eaa922d
+  adjust_sdk: d2794daa90b59472a637de4a58b60b78cdeabf2f
+  AdjustSignature: 23b9e5d4adcadffc303bb6b410fde617dd88504f
   connectivity_plus: cb623214f4e1f6ef8fe7403d580fdad517d2f7dd
   Firebase: 1fe1c0a7d9aaea32efe01fbea5f0ebd8d70e53a2
   firebase_core: 2d4534e7b489907dcede540c835b48981d890943
@@ -219,10 +267,15 @@ SPEC CHECKSUMS:
   image_picker_ios: 7fe1ff8e34c1790d6fff70a32484959f563a928a
   local_auth_darwin: 553ce4f9b16d3fdfeafce9cf042e7c9f77c1c391
   nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
+  OneTrust-CMP-XCFramework: 6228b5d12f4abb2df4cb26b107edc49759b12818
+  onetrust_publishers_native_cmp: a154262b9ff683222be7278bef04b07580db4b3f
   path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
+  pay_ios: 2c48d76615ded0cfaff66185669501b8b1dfc55e
   permission_handler_apple: 4ed2196e43d0651e8ff7ca3483a069d469701f2d
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   PromisesSwift: 9d77319bbe72ebf6d872900551f7eeba9bce2851
+  pushwoosh_flutter: 0057fe65f652ba49512dedf60d386b1e26f13897
+  PushwooshXCFramework: df00324258906361dda3eba19e72c176a64d211d
   shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
   sqflite_darwin: 20b2a3a3b70e43edae938624ce550a3cbf66a3d0
   video_player_avfoundation: 2cef49524dd1f16c5300b9cd6efd9611ce03639b
