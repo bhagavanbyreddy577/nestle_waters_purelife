@@ -58,6 +58,11 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences_android-2.4.10" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/firebase_core-3.13.0" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/file_selector_macos-0.9.4+2" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/app_links_web-1.0.4" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/app_links_linux-1.0.3" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/gtk-2.1.0" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/app_links-6.4.0" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/package_info_plus-8.3.0" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
