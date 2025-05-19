@@ -90,6 +90,8 @@ dependencies:
   app_links: ^6.4.0
   # Version Info
   package_info_plus: ^8.3.0
+  # Find locations on the filesystem
+  path_provider: ^2.1.5
 
 dependency_overrides:
   source_gen: ^2.0.0
