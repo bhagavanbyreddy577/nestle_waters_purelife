@@ -63,7 +63,7 @@ class NSwitch extends StatelessWidget {
   final Color? titleIconColor;
 
   const NSwitch({
-    Key? key,
+    super.key,
     required this.value,
     required this.onChanged,
     required this.title,
@@ -84,7 +84,7 @@ class NSwitch extends StatelessWidget {
     this.dividerColor = Colors.grey,
     this.titleIcon,
     this.titleIconColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

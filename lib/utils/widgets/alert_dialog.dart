@@ -118,7 +118,7 @@ class NAlertDialog extends StatefulWidget {
 
   /// Constructor for CustomAlertDialog
   const NAlertDialog({
-    Key? key,
+    super.key,
     required this.type,
     required this.title,
     this.subtitle,
@@ -147,7 +147,7 @@ class NAlertDialog extends StatefulWidget {
     this.onSecondaryAction,
     this.primaryActionText = 'OK',
     this.secondaryActionText = 'Cancel',
-  }) : super(key: key);
+  });
 
   @override
   State<NAlertDialog> createState() => _NAlertDialogState();

@@ -106,7 +106,7 @@ class NAdaptiveListView<T> extends StatefulWidget {
   final Key? listKey;
 
   const NAdaptiveListView({
-    Key? key,
+    super.key,
     required this.items,
     required this.itemBuilder,
     this.isGridMode = false,
@@ -132,7 +132,7 @@ class NAdaptiveListView<T> extends StatefulWidget {
     this.bottomBuilder,
     this.topBuilder,
     this.listKey,
-  }) : super(key: key);
+  });
 
   @override
   State<NAdaptiveListView<T>> createState() => _NAdaptiveListViewState<T>();

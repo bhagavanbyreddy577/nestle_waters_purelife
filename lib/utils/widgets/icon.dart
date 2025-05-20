@@ -65,7 +65,7 @@ class NIcon extends StatelessWidget {
 
   /// Creates a customizable icon button.
   const NIcon({
-    Key? key,
+    super.key,
     required this.icon,
     required this.onPressed,
     this.tooltip,
@@ -81,7 +81,7 @@ class NIcon extends StatelessWidget {
     this.constraints,
     this.focusNode,
     this.autofocus = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

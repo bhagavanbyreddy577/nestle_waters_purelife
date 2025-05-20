@@ -37,7 +37,7 @@ class CustomCardWidget extends StatelessWidget {
 
   /// Constructor for CustomCardWidget
   const CustomCardWidget({
-    Key? key,
+    super.key,
     this.child,
     this.backgroundColor,
     this.borderRadius,
@@ -49,7 +49,7 @@ class CustomCardWidget extends StatelessWidget {
     this.borderWidth,
     this.gradient,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

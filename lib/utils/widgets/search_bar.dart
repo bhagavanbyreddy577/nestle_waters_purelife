@@ -102,7 +102,7 @@ class NSearchBar<T> extends StatefulWidget {
   final Widget? noSuggestionsWidget;
 
   const NSearchBar({
-    Key? key,
+    super.key,
     required this.suggestionsCallback,
     required this.suggestionItemBuilder,
     this.onChanged,
@@ -133,7 +133,7 @@ class NSearchBar<T> extends StatefulWidget {
       padding: EdgeInsets.all(8.0),
       child: Text('No results found'),
     )),
-  }) : super(key: key);
+  });
 
   @override
   State<NSearchBar<T>> createState() => _NSearchBarState<T>();
@@ -335,7 +335,7 @@ class _NSearchBarState<T> extends State<NSearchBar<T>> {
           width: size.width,
           child: Material( // Material for theming, elevation, and shape
             elevation: widget.suggestionsBoxDecoration?.boxShadow != null ? 0 : 4.0, // Use elevation if no custom shadow
-            shape: (widget.suggestionsBoxDecoration?.border as BoxBorder?) != null || widget.suggestionsBoxDecoration?.borderRadius != null
+            shape: widget.suggestionsBoxDecoration?.border != null || widget.suggestionsBoxDecoration?.borderRadius != null
                 ? RoundedRectangleBorder(
               borderRadius: (widget.suggestionsBoxDecoration?.borderRadius?.resolve(Directionality.of(context)) ?? BorderRadius.zero),
               // This is a simplified way to get a side; proper shaping might need more complex handling if `suggestionsBoxDecoration.shape` is used.

@@ -76,7 +76,7 @@ class NPhoneNumberTextField extends StatefulWidget {
   final bool autoFormat;
 
   const NPhoneNumberTextField({
-    Key? key,
+    super.key,
     required this.controller,
     this.selectedCountry,
     this.hintText = 'Phone number',
@@ -101,7 +101,7 @@ class NPhoneNumberTextField extends StatefulWidget {
     this.errorText,
     this.enabled = true,
     this.autoFormat = true,
-  }) : super(key: key);
+  });
 
   @override
   State<NPhoneNumberTextField> createState() => _PhoneNumberTextFieldState();
@@ -255,7 +255,7 @@ class _PhoneNumberTextFieldState extends State<NPhoneNumberTextField> {
           decoration: widget.customDecoration ??
               InputDecoration(
                 hintText: widget.selectedCountry == null
-                    ? 'Select country first'
+                    ? 'Enter Phone Number'
                     : widget.hintText,
                 hintStyle: widget.hintStyle ?? TextStyle(color: Colors.grey.shade500),
                 errorText: widget.errorText ?? _errorText,

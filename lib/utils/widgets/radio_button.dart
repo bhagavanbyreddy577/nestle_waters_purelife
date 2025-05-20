@@ -50,7 +50,7 @@ class NRadioButton<T> extends StatelessWidget {
   final CrossAxisAlignment crossAxisAlignment;
 
   const NRadioButton({
-    Key? key,
+    super.key,
     required this.groupValue,
     required this.value,
     required this.onChanged,
@@ -65,7 +65,7 @@ class NRadioButton<T> extends StatelessWidget {
     this.titleFirst = false,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.crossAxisAlignment = CrossAxisAlignment.center,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -86,11 +86,11 @@ class NRadioButton<T> extends StatelessWidget {
           onChanged: enabled ? (newValue) => onChanged(newValue as T) : null,
           activeColor: effectiveActiveColor,
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          fillColor: MaterialStateProperty.resolveWith<Color>((states) {
-            if (states.contains(MaterialState.disabled)) {
+          fillColor: WidgetStateProperty.resolveWith<Color>((states) {
+            if (states.contains(WidgetState.disabled)) {
               return theme.disabledColor;
             }
-            if (states.contains(MaterialState.selected)) {
+            if (states.contains(WidgetState.selected)) {
               return effectiveActiveColor;
             }
             return effectiveUnselectedColor;
@@ -179,7 +179,7 @@ class NRadioGroup<T> extends StatefulWidget {
   final bool enabled;
 
   const NRadioGroup({
-    Key? key,
+    super.key,
     required this.items,
     required this.labelBuilder,
     required this.onChanged,
@@ -196,7 +196,7 @@ class NRadioGroup<T> extends StatefulWidget {
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.crossAxisAlignment = CrossAxisAlignment.center,
     this.enabled = true,
-  }) : super(key: key);
+  });
 
   @override
   State<NRadioGroup<T>> createState() => _NRadioGroupState<T>();
@@ -251,7 +251,6 @@ class _NRadioGroupState<T> extends State<NRadioGroup<T>> {
     // Build layout based on direction
     if (widget.direction == Axis.vertical) {
       return Column(
-        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: _intersperse(
           radioButtons,
@@ -260,7 +259,7 @@ class _NRadioGroupState<T> extends State<NRadioGroup<T>> {
       );
     } else {
       return Row(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: _intersperse(
           radioButtons,
           SizedBox(width: widget.spacing),

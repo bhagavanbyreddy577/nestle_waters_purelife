@@ -1,6 +1,6 @@
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:dartz/dartz.dart';
-import 'package:nestle_waters_purelife/core/services/graphql/graphql_service.dart';
+import 'package:nestle_waters_purelife/core/services/network/graphql/graphql_service.dart';
 import 'package:nestle_waters_purelife/utils/exceptions/custom_failures.dart';
 
 class GraphQLServiceImpl implements GraphQLService {
@@ -21,15 +21,15 @@ class GraphQLServiceImpl implements GraphQLService {
         ),
       );
       if (result.hasException) {
-        return Left(ServerFailure([result.exception.toString()]));
+        return Left(ServerFailure(message: result.exception.toString()));
       }
       final data = result.data;
       if (data == null) {
-        return Left(ServerFailure(["No models returned from GraphQL query"]));
+        return Left(ServerFailure(message: "No models returned from GraphQL query"));
       }
       return Right(fromJson(data));
     } catch (e) {
-      return Left(ServerFailure([e.toString()]));
+      return Left(ServerFailure(message:e.toString()));
     }
   }
 
@@ -47,15 +47,15 @@ class GraphQLServiceImpl implements GraphQLService {
         ),
       );
       if (result.hasException) {
-        return Left(ServerFailure([result.exception.toString()]));
+        return Left(ServerFailure(message:result.exception.toString()));
       }
       final data = result.data;
       if (data == null) {
-        return Left(ServerFailure(["No models returned from GraphQL mutation"]));
+        return Left(ServerFailure(message:"No models returned from GraphQL mutation"));
       }
       return Right(fromJson(data));
     } catch (e) {
-      return Left(ServerFailure([e.toString()]));
+      return Left(ServerFailure(message:e.toString()));
     }
   }
 }

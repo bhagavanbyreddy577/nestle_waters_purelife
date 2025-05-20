@@ -69,7 +69,7 @@ class NImage extends StatelessWidget {
   ///
   /// Either [imageUrl] or [assetPath] must be provided, but not both.
   const NImage({
-    Key? key,
+    super.key,
     this.imageUrl,
     this.assetPath,
     this.fit = BoxFit.cover,
@@ -90,8 +90,7 @@ class NImage extends StatelessWidget {
   })  : assert(
   (imageUrl != null && assetPath == null) ||
       (imageUrl == null && assetPath != null),
-  'Either imageUrl or assetPath must be provided, but not both.'),
-        super(key: key);
+  'Either imageUrl or assetPath must be provided, but not both.');
 
   @override
   Widget build(BuildContext context) {

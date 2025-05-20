@@ -4,7 +4,7 @@ import 'package:nestle_waters_purelife/utils/validators/validation.dart';
 class NEmailTextField extends StatefulWidget {
 
   /// Text editing controller to manage the text input
-  final TextEditingController controller;
+  final TextEditingController emailController;
 
   /// Optional hint text displayed when the field is empty
   final String? hintText;
@@ -64,8 +64,8 @@ class NEmailTextField extends StatefulWidget {
   final bool enabled;
 
   const NEmailTextField({
-    Key? key,
-    required this.controller,
+    super.key,
+    required this.emailController,
     this.hintText = 'Enter your email',
     this.label = 'Email',
     this.showLabel = true,
@@ -85,7 +85,7 @@ class NEmailTextField extends StatefulWidget {
     this.borderWidth = 1.0,
     this.errorText,
     this.enabled = true,
-  }) : super(key: key);
+  });
 
   @override
   State<NEmailTextField> createState() => _EmailTextFieldState();
@@ -116,7 +116,7 @@ class _EmailTextFieldState extends State<NEmailTextField> {
           ),
         // Email text form field with all the customized properties
         TextFormField(
-          controller: widget.controller,
+          controller: widget.emailController,
           keyboardType: widget.keyboardType,
           style: widget.textStyle,
           enabled: widget.enabled,

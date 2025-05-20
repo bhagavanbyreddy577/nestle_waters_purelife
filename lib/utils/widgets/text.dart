@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class NText extends StatelessWidget {
 
@@ -92,7 +91,7 @@ class NText extends StatelessWidget {
 
   /// Creates a new CustomText widget.
   const NText({
-    Key? key,
+    super.key,
     required this.text,
     this.style,
     this.color,
@@ -112,7 +111,7 @@ class NText extends StatelessWidget {
     this.shape,
     this.border,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

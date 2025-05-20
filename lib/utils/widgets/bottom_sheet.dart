@@ -86,7 +86,7 @@ class NBottomSheet extends StatelessWidget {
 
   /// Constructor for CustomBottomSheet
   const NBottomSheet({
-    Key? key,
+    super.key,
     required this.type,
     required this.title,
     this.subtitle,
@@ -108,7 +108,7 @@ class NBottomSheet extends StatelessWidget {
     this.animationDuration = const Duration(milliseconds: 300),
     this.isDismissible = true,
     this.borderRadius = 16.0,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

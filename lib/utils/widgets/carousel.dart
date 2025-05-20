@@ -68,7 +68,7 @@ class NCarousel extends StatefulWidget {
   final Widget? errorWidget;
 
   const NCarousel({
-    Key? key,
+    super.key,
     required this.items,
     this.height = 200.0,
     this.width,
@@ -100,7 +100,7 @@ class NCarousel extends StatefulWidget {
     this.boxShadow,
     this.placeholder,
     this.errorWidget,
-  }) : super(key: key);
+  });
 
   @override
   _NCarouselState createState() => _NCarouselState();
@@ -318,7 +318,7 @@ class VideoPlayerWidget extends StatefulWidget {
   final Widget? errorWidget;
 
   const VideoPlayerWidget({
-    Key? key,
+    super.key,
     this.videoUrl,
     this.assetPath,
     required this.isNetworkVideo,
@@ -328,7 +328,7 @@ class VideoPlayerWidget extends StatefulWidget {
     this.showControls = true,
     this.placeholder,
     this.errorWidget,
-  }) : super(key: key);
+  });
 
   @override
   _VideoPlayerWidgetState createState() => _VideoPlayerWidgetState();

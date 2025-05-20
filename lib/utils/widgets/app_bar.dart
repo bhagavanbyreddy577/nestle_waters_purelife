@@ -74,7 +74,7 @@ class NAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   /// Creates a custom app bar.
   const NAppBar({
-    Key? key,
+    super.key,
     this.leading,
     this.automaticallyImplyLeading = true,
     this.title,
@@ -90,7 +90,7 @@ class NAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.titleSpacing,
     this.shape,
     this.preferredHeight = kToolbarHeight,
-  }) : super(key: key);
+  });
 
   @override
   Size get preferredSize => Size.fromHeight(

@@ -42,7 +42,7 @@ class CustomCircularProgressIndicator extends StatelessWidget {
 
   /// Creates a custom circular progress indicator.
   const CustomCircularProgressIndicator({
-    Key? key,
+    super.key,
     required this.progress,
     this.size = 100.0,
     this.strokeWidth = 10.0,
@@ -55,8 +55,7 @@ class CustomCircularProgressIndicator extends StatelessWidget {
     this.animationDuration = const Duration(milliseconds: 300),
     this.centerWidget,
     this.onTap,
-  })  : assert(progress >= 0.0 && progress <= 1.0, 'Progress must be between 0.0 and 1.0'),
-        super(key: key);
+  })  : assert(progress >= 0.0 && progress <= 1.0, 'Progress must be between 0.0 and 1.0');
 
   @override
   Widget build(BuildContext context) {
