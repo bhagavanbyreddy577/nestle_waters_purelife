@@ -52,7 +52,7 @@ class NCircularProgress extends StatelessWidget {
   final bool showBackgroundTrack;
 
   const NCircularProgress({
-    Key? key,
+    super.key,
     this.value = 0.0,
     this.size = 100.0,
     this.strokeWidth = 10.0,
@@ -68,8 +68,7 @@ class NCircularProgress extends StatelessWidget {
     this.isIndeterminate = false,
     this.centerWidget,
     this.showBackgroundTrack = true,
-  }) : assert(value >= 0.0 && value <= 1.0),
-        super(key: key);
+  }) : assert(value >= 0.0 && value <= 1.0);
 
   @override
   Widget build(BuildContext context) {

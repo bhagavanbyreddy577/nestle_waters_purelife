@@ -4,7 +4,7 @@ class CountryCodeDataHelper {
   /// list of common countries with their calling codes and validation information
   static const List<CountryCodeData> countryCodeData  =
   [
-    const CountryCodeData(
+    CountryCodeData(
       name: 'United States',
       code: '+1',
       isoCode: 'US',
@@ -13,7 +13,7 @@ class CountryCodeDataHelper {
       minLength: 10,
       pattern: r'^[2-9]\d{9}$',
     ),
-    const CountryCodeData(
+    CountryCodeData(
       name: 'India',
       code: '+91',
       isoCode: 'IN',
@@ -22,7 +22,7 @@ class CountryCodeDataHelper {
       minLength: 10,
       pattern: r'^[6-9]\d{9}$',
     ),
-    const CountryCodeData(
+    CountryCodeData(
       name: 'United Kingdom',
       code: '+44',
       isoCode: 'GB',
@@ -31,7 +31,7 @@ class CountryCodeDataHelper {
       minLength: 9,
       pattern: r'^7\d{9}$',
     ),
-    const CountryCodeData(
+    CountryCodeData(
       name: 'Canada',
       code: '+1',
       isoCode: 'CA',
@@ -40,7 +40,7 @@ class CountryCodeDataHelper {
       minLength: 10,
       pattern: r'^[2-9]\d{9}$',
     ),
-    const CountryCodeData(
+    CountryCodeData(
       name: 'Australia',
       code: '+61',
       isoCode: 'AU',
@@ -49,7 +49,7 @@ class CountryCodeDataHelper {
       minLength: 9,
       pattern: r'^4\d{8}$',
     ),
-    const CountryCodeData(
+    CountryCodeData(
       name: 'Germany',
       code: '+49',
       isoCode: 'DE',
@@ -58,7 +58,7 @@ class CountryCodeDataHelper {
       minLength: 10,
       pattern: r'^1\d{9,10}$',
     ),
-    const CountryCodeData(
+    CountryCodeData(
       name: 'France',
       code: '+33',
       isoCode: 'FR',
@@ -67,7 +67,7 @@ class CountryCodeDataHelper {
       minLength: 9,
       pattern: r'^[67]\d{8}$',
     ),
-    const CountryCodeData(
+    CountryCodeData(
       name: 'Japan',
       code: '+81',
       isoCode: 'JP',
@@ -76,7 +76,7 @@ class CountryCodeDataHelper {
       minLength: 10,
       pattern: r'^[789]0\d{8}$',
     ),
-    const CountryCodeData(
+    CountryCodeData(
       name: 'China',
       code: '+86',
       isoCode: 'CN',
@@ -85,7 +85,7 @@ class CountryCodeDataHelper {
       minLength: 11,
       pattern: r'^1\d{10}$',
     ),
-    const CountryCodeData(
+    CountryCodeData(
       name: 'Brazil',
       code: '+55',
       isoCode: 'BR',

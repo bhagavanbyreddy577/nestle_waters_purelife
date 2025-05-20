@@ -4,7 +4,7 @@ import 'package:nestle_waters_purelife/utils/validators/validation.dart';
 class NPasswordTextField extends StatefulWidget {
 
   /// Text editing controller to manage the text input
-  final TextEditingController controller;
+  final TextEditingController passwordController;
 
   /// Optional hint text displayed when the field is empty
   final String? hintText;
@@ -74,8 +74,8 @@ class NPasswordTextField extends StatefulWidget {
   final Color? toggleIconColor;
 
   const NPasswordTextField({
-    Key? key,
-    required this.controller,
+    super.key,
+    required this.passwordController,
     this.hintText = 'Enter your password',
     this.label = 'Password',
     this.showLabel = true,
@@ -101,7 +101,7 @@ class NPasswordTextField extends StatefulWidget {
     this.requireSpecialChars = true,
     this.minLength = 8,
     this.toggleIconColor,
-  }) : super(key: key);
+  });
 
   @override
   State<NPasswordTextField> createState() => _PasswordTextFieldState();
@@ -134,7 +134,7 @@ class _PasswordTextFieldState extends State<NPasswordTextField> {
           ),
         // Password text form field with all the customized properties
         TextFormField(
-          controller: widget.controller,
+          controller: widget.passwordController,
           obscureText: _obscureText,
           style: widget.textStyle,
           enabled: widget.enabled,

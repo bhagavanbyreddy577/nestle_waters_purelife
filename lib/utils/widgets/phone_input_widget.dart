@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:nestle_waters_purelife/utils/helpers/helper_classes/country_code_data_helper.dart';
 import 'package:nestle_waters_purelife/utils/widgets/country_code_picker.dart';
 import 'package:nestle_waters_purelife/utils/widgets/phone_number_text_field.dart';
@@ -77,8 +76,11 @@ class NPhoneInputWidget extends StatefulWidget {
   /// Initial text to show in country picker
   final String initialCountryText;
 
+  /// Whether the text field is enabled
+  final bool enabled;
+
   const NPhoneInputWidget({
-    Key? key,
+    super.key,
     required this.phoneController,
     this.showLabels = true,
     this.countryLabel = 'Country',
@@ -103,7 +105,8 @@ class NPhoneInputWidget extends StatefulWidget {
     this.inputTextStyle,
     this.countryPickerWidthRatio = 0.35,
     this.initialCountryText = 'Country',
-  }) : super(key: key);
+    this.enabled = true,
+  });
 
   @override
   State<NPhoneInputWidget> createState() => _NPhoneInputWidgetState();
@@ -176,6 +179,7 @@ class _NPhoneInputWidgetState extends State<NPhoneInputWidget> {
                   fillColor: widget.fillColor,
                   textStyle: widget.inputTextStyle,
                   autoFormat: widget.autoFormat,
+                  enabled: widget.enabled,
                   onChanged: (value) {
                     if (widget.onPhoneNumberChanged != null && _selectedCountry != null) {
                       final isValid = _formKey.currentState?.validate() ?? false;

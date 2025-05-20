@@ -54,7 +54,7 @@ class NCheckbox extends StatefulWidget {
   final CrossAxisAlignment crossAxisAlignment;
 
   const NCheckbox({
-    Key? key,
+    super.key,
     required this.value,
     required this.onChanged,
     required this.title,
@@ -72,7 +72,7 @@ class NCheckbox extends StatefulWidget {
     this.titleFirst = false,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.crossAxisAlignment = CrossAxisAlignment.center,
-  }) : super(key: key);
+  });
 
   @override
   _NCheckboxState createState() => _NCheckboxState();

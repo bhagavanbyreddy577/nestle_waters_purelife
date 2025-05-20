@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nestle_waters_purelife/utils/styles/text_style.dart';
 
 class TempScreen extends StatelessWidget {
-  const TempScreen({Key? key}) : super(key: key);
+  const TempScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

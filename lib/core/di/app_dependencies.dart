@@ -3,13 +3,15 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 import 'package:hive/hive.dart';
+import 'package:nestle_waters_purelife/core/services/network/dio/dio_client_service.dart';
+import 'package:nestle_waters_purelife/core/services/network/dio/dio_client_service_impl.dart';
+import 'package:nestle_waters_purelife/core/services/network/graphql/graphql_service.dart';
+import 'package:nestle_waters_purelife/core/services/network/graphql/graphql_service_impl.dart';
+import 'package:nestle_waters_purelife/core/services/network/http/http_client_service.dart';
+import 'package:nestle_waters_purelife/core/services/network/http/http_client_service_impl.dart';
 import 'package:nestle_waters_purelife/core/services/network/network_info.dart';
-import 'package:nestle_waters_purelife/core/services/graphql/graphql_service.dart';
-import 'package:nestle_waters_purelife/core/services/graphql/graphql_service_impl.dart';
 import 'package:nestle_waters_purelife/core/services/hive/hive_service.dart';
 import 'package:nestle_waters_purelife/core/services/hive/hive_service_impl.dart';
-import 'package:nestle_waters_purelife/core/services/http/http_client_service.dart';
-import 'package:nestle_waters_purelife/core/services/http/http_client_service_impl.dart';
 import 'package:nestle_waters_purelife/core/services/sharedPreferences/shared_pref_service.dart';
 import 'package:nestle_waters_purelife/core/services/sharedPreferences/shared_pref_service_impl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -49,6 +51,19 @@ Future<void> appDependencies() async {
   // Register http client service
   sl.registerLazySingleton<HttpClientService>(
       () => HttpClientServiceImpl(sl()));
+
+  // Register Dio client service
+  sl.registerLazySingleton<DioClientService>(
+        () => DioClientServiceImpl(
+      // Default values - these can be changed at runtime
+      baseUrl: 'https://api.example.com',
+      connectTimeout: 30000,
+      receiveTimeout: 30000,
+      sendTimeout: 30000,
+      retryCount: 3,
+      retryDelay: 1000,
+    ),
+  );
 
   // Register Hive service
   sl.registerLazySingletonAsync<HiveService>(

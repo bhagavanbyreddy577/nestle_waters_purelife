@@ -93,7 +93,7 @@ class NListTile extends StatelessWidget {
   ///
   /// Many of the parameters have defaults and are optional.
   const NListTile({
-    Key? key,
+    super.key,
     this.title,
     this.subtitle,
     this.leading,
@@ -123,7 +123,7 @@ class NListTile extends StatelessWidget {
     this.dividerEndIndent = 0,
     this.clipBehavior = true,
     this.margin = EdgeInsets.zero,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

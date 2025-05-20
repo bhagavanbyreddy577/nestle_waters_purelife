@@ -57,7 +57,7 @@ class NLinearProgress extends StatelessWidget {
   final BoxShape shape;
 
   const NLinearProgress({
-    Key? key,
+    super.key,
     this.value = 0.0,
     this.height = 10.0,
     this.width,
@@ -74,8 +74,7 @@ class NLinearProgress extends StatelessWidget {
     this.percentageTextStyle,
     this.isIndeterminate = false,
     this.shape = BoxShape.rectangle,
-  }) : assert(value >= 0.0 && value <= 1.0),
-        super(key: key);
+  }) : assert(value >= 0.0 && value <= 1.0);
 
   @override
   Widget build(BuildContext context) {
@@ -227,7 +226,7 @@ class _LinearProgressClipper extends CustomClipper<Path> {
 
 /// Simple animation controller for progress animations
 class ClipperAnimation extends Animation<double> with AnimationLazyListenerMixin {
-  double _value;
+  final double _value;
   final Duration duration;
 
   ClipperAnimation({

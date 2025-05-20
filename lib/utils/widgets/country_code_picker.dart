@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:nestle_waters_purelife/utils/helpers/helper_classes/country_code_data_helper.dart';
 
 class NCountryCodePicker extends StatefulWidget {
@@ -60,8 +59,8 @@ class NCountryCodePicker extends StatefulWidget {
   /// Width of the dropdown button (if null, will size to content)
   final double? width;
 
-   NCountryCodePicker({
-    Key? key,
+   const NCountryCodePicker({
+    super.key,
     this.selectedCountry,
     required this.onCountrySelected,
     this.showLabel = true,
@@ -81,7 +80,7 @@ class NCountryCodePicker extends StatefulWidget {
     this.customDecoration,
     this.height = 58.0,
     this.width,
-  }) : super(key: key);
+  });
 
   @override
   State<NCountryCodePicker> createState() => _NCountryCodePickerState();

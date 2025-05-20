@@ -42,6 +42,7 @@ class HiveServiceImpl implements HiveService {
     await hiveBox.putAll(entries);
   }
 
+  @override
   Future<bool> containsKey<T>(String boxName, dynamic key) async {
     //final box = await Hive.openBox<T>(boxName);
     return hiveBox.containsKey(key);

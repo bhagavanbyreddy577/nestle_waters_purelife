@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -368,7 +367,7 @@ class FileDownloadExample {
         ? path.extension(imageUrl)
         : '.jpg';
 
-    final filename = '${cleanName}$extension';
+    final filename = '$cleanName$extension';
 
     try {
       final result = await downloader.downloadFileSimple(

@@ -154,7 +154,7 @@ class PayFortPaymentService {
     }
 
     // Add SHA phrase
-    final signString = '${phrase}$concatenatedString${phrase}';
+    final signString = '$phrase$concatenatedString$phrase';
 
     // Calculate SHA-256 hash
     final bytes = utf8.encode(signString);
@@ -264,10 +264,9 @@ class _PayFortWebView extends StatefulWidget {
   final Function(Map<String, dynamic>) responseHandler;
 
   const _PayFortWebView({
-    Key? key,
     required this.htmlContent,
     required this.responseHandler,
-  }) : super(key: key);
+  });
 
   @override
   _PayFortWebViewState createState() => _PayFortWebViewState();

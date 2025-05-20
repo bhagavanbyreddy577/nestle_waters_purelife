@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
-import 'package:nestle_waters_purelife/core/services/http/http_client_service.dart';
+import 'package:nestle_waters_purelife/core/services/network/http/http_client_service.dart';
 import 'package:retry/retry.dart';
 
 class HttpClientServiceImpl implements HttpClientService {
