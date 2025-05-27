@@ -78,7 +78,7 @@ class FeatureFlagProvider with ChangeNotifier {
 
 // TODO: Usage Example (Need to remove in production)
 /// This [FeatureFlagProvider] and [FeatureFlagService] classes are created on below assumption.
-/// Assumption: The idea here is whenever user selects/changes the country and region in the app, We will check the firebase config flags and configure them in locally. The application should able to fetch which fetaure is enabled which disabled based on that flag. whenever user selects country and region provider class has notify to the listeners.
+/// Assumption: The idea here is whenever user selects/changes the country and region in the app, We will check the firebase config flags and configure them in locally. The application should able to fetch which feature is enabled which disabled based on that flag. whenever user selects country and region provider class has notify to the listeners.
 /*
 *
 *

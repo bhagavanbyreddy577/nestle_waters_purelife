@@ -70,7 +70,7 @@ class NEmailTextField extends StatefulWidget {
     this.label = 'Email',
     this.showLabel = true,
     this.validator,
-    this.showLeftIcon = true,
+    this.showLeftIcon = false,
     this.leftIcon = Icons.email,
     this.keyboardType = TextInputType.emailAddress,
     this.onChanged,
