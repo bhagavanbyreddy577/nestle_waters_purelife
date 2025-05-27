@@ -4,7 +4,86 @@ class CountryCodeDataHelper {
   /// list of common countries with their calling codes and validation information
   static const List<CountryCodeData> countryCodeData  =
   [
+
+    // UAE
     CountryCodeData(
+      name: 'United Arab Emirates',
+      code: '+971',
+      isoCode: 'AE',
+      flag: '🇦🇪',
+      maxLength: 9,
+      minLength: 8,
+      pattern: r'^[2-9]\d{7,8}$',
+    ),
+
+// Saudi Arabia
+    CountryCodeData(
+      name: 'Saudi Arabia',
+      code: '+966',
+      isoCode: 'SA',
+      flag: '🇸🇦',
+      maxLength: 9,
+      minLength: 8,
+      pattern: r'^[15]\d{7,8}$',
+    ),
+
+// Jordan
+    CountryCodeData(
+      name: 'Jordan',
+      code: '+962',
+      isoCode: 'JO',
+      flag: '🇯🇴',
+      maxLength: 9,
+      minLength: 8,
+      pattern: r'^[2-9]\d{7,8}$',
+    ),
+
+// Egypt
+    CountryCodeData(
+      name: 'Egypt',
+      code: '+20',
+      isoCode: 'EG',
+      flag: '🇪🇬',
+      maxLength: 10,
+      minLength: 8,
+      pattern: r'^[1-9]\d{7,9}$',
+    ),
+
+// Lebanon
+    CountryCodeData(
+      name: 'Lebanon',
+      code: '+961',
+      isoCode: 'LB',
+      flag: '🇱🇧',
+      maxLength: 8,
+      minLength: 7,
+      pattern: r'^[1-9]\d{6,7}$',
+    ),
+
+// Bahrain
+    CountryCodeData(
+      name: 'Bahrain',
+      code: '+973',
+      isoCode: 'BH',
+      flag: '🇧🇭',
+      maxLength: 8,
+      minLength: 8,
+      pattern: r'^[13-9]\d{7}$',
+    ),
+
+// Qatar
+    CountryCodeData(
+      name: 'Qatar',
+      code: '+974',
+      isoCode: 'QA',
+      flag: '🇶🇦',
+      maxLength: 8,
+      minLength: 8,
+      pattern: r'^[3-7]\d{7}$',
+    ),
+
+
+    /* CountryCodeData(
       name: 'United States',
       code: '+1',
       isoCode: 'US',
@@ -94,7 +173,7 @@ class CountryCodeDataHelper {
       minLength: 10,
       pattern: r'^[1-9]{2}9?\d{8}$',
     ),
-    // Add more countries as needed
+    // Add more countries as needed*/
   ];
 
 }

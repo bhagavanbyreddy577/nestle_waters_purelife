@@ -88,7 +88,7 @@ class NPhoneInputWidget extends StatefulWidget {
     this.labelStyle,
     this.showFlag = true,
     this.showCountryCode = true,
-    this.showLeftIcon = true,
+    this.showLeftIcon = false,
     this.leftIcon = Icons.phone,
     this.showRightIcon = false,
     this.rightIcon = Icons.clear,

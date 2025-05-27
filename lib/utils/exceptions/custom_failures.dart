@@ -26,129 +26,89 @@ abstract class Failure extends Equatable {
 /// Server-side failures
 class ServerFailure extends Failure {
   const ServerFailure({
-    required String message,
-    int? code,
-    dynamic data,
-    dynamic error,
-  }) : super(
-    message: message,
-    code: code,
-    data: data,
-    error: error,
-  );
+    required super.message,
+    super.code,
+    super.data,
+    super.error,
+  });
 }
 
 /// Network-related failures
 class NetworkFailure extends Failure {
   const NetworkFailure({
-    required String message,
-    dynamic error,
-  }) : super(
-    message: message,
-    error: error,
-  );
+    required super.message,
+    super.error,
+  });
 }
 
 /// Authentication failures
 class AuthFailure extends Failure {
   const AuthFailure({
-    required String message,
-    int? code,
-    dynamic data,
-    dynamic error,
-  }) : super(
-    message: message,
-    code: code,
-    data: data,
-    error: error,
-  );
+    required super.message,
+    super.code,
+    super.data,
+    super.error,
+  });
 }
 
 /// Resource not found failures
 class NotFoundFailure extends Failure {
   const NotFoundFailure({
-    required String message,
-    int? code,
-    dynamic data,
-    dynamic error,
-  }) : super(
-    message: message,
-    code: code,
-    data: data,
-    error: error,
-  );
+    required super.message,
+    super.code,
+    super.data,
+    super.error,
+  });
 }
 
 /// Validation failures
 class ValidationFailure extends Failure {
   const ValidationFailure({
-    required String message,
-    int? code,
-    dynamic data,
-    dynamic error,
-  }) : super(
-    message: message,
-    code: code,
-    data: data,
-    error: error,
-  );
+    required super.message,
+    super.code,
+    super.data,
+    super.error,
+  });
 }
 
 /// Rate limit failures
 class RateLimitFailure extends Failure {
   const RateLimitFailure({
-    required String message,
-    int? code,
-    dynamic data,
-    dynamic error,
-  }) : super(
-    message: message,
-    code: code,
-    data: data,
-    error: error,
-  );
+    required super.message,
+    super.code,
+    super.data,
+    super.error,
+  });
 }
 
 /// Timeout failures
 class TimeoutFailure extends Failure {
   const TimeoutFailure({
-    required String message,
-    dynamic error,
-  }) : super(
-    message: message,
-    error: error,
-  );
+    required super.message,
+    super.error,
+  });
 }
 
 /// Cancelled request failures
 class CancelledFailure extends Failure {
   const CancelledFailure({
-    required String message,
-    dynamic error,
-  }) : super(
-    message: message,
-    error: error,
-  );
+    required super.message,
+    super.error,
+  });
 }
 
 /// Unknown failures
 class UnknownFailure extends Failure {
   const UnknownFailure({
-    required String message,
-    dynamic error,
-  }) : super(
-    message: message,
-    error: error,
-  );
+    required super.message,
+    super.error,
+  });
 }
 
 /// No data failures
 class NoDataFailure extends Failure {
   const NoDataFailure({
-    required String message,
-    dynamic error,
-  }) : super(
-    message: message,
-    error: error,
-  );
+    required super.message,
+    super.error,
+  });
 }

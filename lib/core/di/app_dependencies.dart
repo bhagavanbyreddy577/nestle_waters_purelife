@@ -55,8 +55,8 @@ Future<void> appDependencies() async {
   // Register Dio client service
   sl.registerLazySingleton<DioClientService>(
         () => DioClientServiceImpl(
-      // Default values - these can be changed at runtime
-      baseUrl: 'https://api.example.com',
+      ///TODO: Need to update
+      baseUrl: '',
       connectTimeout: 30000,
       receiveTimeout: 30000,
       sendTimeout: 30000,
