@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nestle_waters_purelife/core/router/routes.dart';
+import 'package:nestle_waters_purelife/utils/helpers/helper_classes/navigation_helper.dart';
 import 'package:nestle_waters_purelife/utils/widgets/app_bar.dart';
 import 'package:nestle_waters_purelife/utils/widgets/check_box.dart';
 import 'package:nestle_waters_purelife/utils/widgets/date_picker.dart';
@@ -181,7 +183,9 @@ class _SignupScreenState extends State<SignupScreen> {
   _createAccount() {
     return NElevatedButton(
       text: 'Create Account',
-      onPressed: () {},
+      onPressed: () {
+        NNavigationHelper.navigateScreen(context, Routes.home);
+      },
     );
   }
 

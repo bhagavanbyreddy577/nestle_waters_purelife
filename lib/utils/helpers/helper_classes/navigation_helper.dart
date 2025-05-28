@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 /// Utility class to handle navigation actions
-class NavigationHelper {
+class NNavigationHelper {
 
-  const NavigationHelper._();
+  const NNavigationHelper._();
 
   /// Navigate to a screen using its name
   static void navigateScreen(

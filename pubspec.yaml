@@ -94,6 +94,10 @@ dependencies:
   path_provider: ^2.1.5
   # Network calls
   dio: ^5.8.0+1
+  # Launch URL
+  url_launcher: ^6.3.1
+  # Share content
+  share_plus: ^11.0.0
 
 dependency_overrides:
   source_gen: ^2.0.0

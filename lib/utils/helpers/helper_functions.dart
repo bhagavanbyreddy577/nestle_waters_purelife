@@ -6,6 +6,7 @@ import 'package:nestle_waters_purelife/utils/widgets/snack_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NHelperFunctions {
 
@@ -67,5 +68,28 @@ class NHelperFunctions {
     // Register adapters
   }
 
-  
+  static Future<void> openPhoneCall(String phoneNumber) async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: phoneNumber,
+    );
+    if (await canLaunchUrl(launchUri)) {
+      await launchUrl(launchUri);
+    } else {
+      throw 'Could not launch $launchUri';
+    }
+  }
+
+  static Future<void> openComposeMail(String email) async {
+    final Uri launchUri = Uri(
+      scheme: 'mailto',
+      path: email,
+    );
+    if (await canLaunchUrl(launchUri)) {
+      await launchUrl(launchUri);
+    } else {
+      throw 'Could not launch $launchUri';
+    }
+  }
+
 }
