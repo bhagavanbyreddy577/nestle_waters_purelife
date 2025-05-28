@@ -346,10 +346,10 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
 
-    // Define your application routes
+    // Define your application router
     _router = GoRouter(
       initialLocation: '/',
-      routes: [
+      router: [
         GoRoute(
           path: '/',
           builder: (context, state) => const HomePage(),
