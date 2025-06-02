@@ -113,7 +113,7 @@ class AnalyticsService {
   /// Returns a Future that completes with a boolean value indicating if the SDK is enabled.
   Future<bool> isEnabled() async {
     _checkInitialization();
-    return await Adjust.isEnabled() ?? false;
+    return await Adjust.isEnabled();
   }
 
   /// Get current attribution data.
