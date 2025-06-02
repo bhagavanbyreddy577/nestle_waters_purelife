@@ -43,7 +43,7 @@ class ItemCounterWidget extends StatelessWidget {
   final bool showBorder;
 
   const ItemCounterWidget({
-    Key? key,
+    super.key,
     required this.count,
     required this.onCountChanged,
     this.minCount = 0,
@@ -55,7 +55,7 @@ class ItemCounterWidget extends StatelessWidget {
     this.incrementIcon = Icons.add,
     this.decrementIcon = Icons.remove,
     this.showBorder = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -45,7 +45,7 @@ class CircularBadgeWidget extends StatelessWidget {
   final EdgeInsets? padding;
 
   const CircularBadgeWidget({
-    Key? key,
+    super.key,
     required this.count,
     this.size = 20.0,
     this.backgroundColor,
@@ -57,7 +57,7 @@ class CircularBadgeWidget extends StatelessWidget {
     this.maxCount = 99,
     this.textStyle,
     this.padding,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,7 @@ class CircularBadgeWidget extends StatelessWidget {
     }
 
     // Format count display (e.g., "99+")
-    final displayCount = count > maxCount ? '${maxCount}+' : count.toString();
+    final displayCount = count > maxCount ? '$maxCount+' : count.toString();
 
     // Adjust badge size based on digit count
     final badgeSize = size + (count > 9 ? 4 : 0);

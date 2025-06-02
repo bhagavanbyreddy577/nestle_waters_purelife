@@ -32,8 +32,9 @@ Future<void> appDependencies() async {
   // Logger
   sl.registerLazySingleton(() => Logger());
 
+  /// TODO: Add graphQL link here
   // GraphQL Client
-  final HttpLink httpLink = HttpLink('https://countries.trevorblades.com/');
+  final HttpLink httpLink = HttpLink('');
   sl.registerLazySingleton(() => GraphQLClient(
         cache: GraphQLCache(store: HiveStore()),
         link: httpLink,
