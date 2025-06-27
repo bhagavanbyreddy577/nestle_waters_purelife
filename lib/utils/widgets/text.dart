@@ -89,6 +89,7 @@ class NText extends StatelessWidget {
   /// Only effective if [shape] is [BoxShape.rectangle].
   final BorderRadius? borderRadius;
 
+
   /// Creates a new CustomText widget.
   const NText({
     super.key,

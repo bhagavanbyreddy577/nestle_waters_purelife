@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:nestle_waters_purelife/core/router/layout_scaffold.dart';
 import 'package:nestle_waters_purelife/core/router/routes.dart';
 import 'package:nestle_waters_purelife/features/account/presentation/screens/account_screen.dart';
+import 'package:nestle_waters_purelife/features/auth/Signup1/screens/signupScreen1.dart';
 import 'package:nestle_waters_purelife/features/auth/signup/presentation/screens/signup_screen.dart';
 import 'package:nestle_waters_purelife/features/cart/presentation/screens/cart_screen.dart';
 import 'package:nestle_waters_purelife/features/home/presentation/screens/home_screen.dart';
@@ -34,6 +35,12 @@ class Router {
       name: Routes.signup,
       path: Routes.signupScreen,
       builder: (context, state) => const SignupScreen(),
+    ),
+    //Create the testing Demo
+    GoRoute(
+      name: Routes.signup1,
+      path: Routes.signupScreen1,
+      builder: (context, state) =>  SignupScreen1(),
     ),
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) =>
@@ -95,7 +102,7 @@ class Router {
   static GoRouter createRouter() {
     return GoRouter(
       navigatorKey: _rootNavigatorKey,
-      initialLocation: Routes.signupScreen,
+      initialLocation: Routes.signupScreen1,
       routes: routes,
       // Add your global redirect logic here if needed
       // redirect: (context, state) { ... },

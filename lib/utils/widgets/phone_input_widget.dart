@@ -11,7 +11,7 @@ class NPhoneInputWidget extends StatefulWidget {
   final bool showLabels;
 
   /// Label for the country picker
-  final String? countryLabel;
+ final String? countryLabel;
 
   /// Label for the phone field
   final String? phoneLabel;
@@ -146,7 +146,7 @@ class _NPhoneInputWidgetState extends State<NPhoneInputWidget> {
                     });
                   },
                   showLabel: widget.showLabels,
-                  label: widget.countryLabel,
+                  // label: widget.countryLabel,
                   labelStyle: widget.labelStyle,
                   countries: widget.countries,
                   initialText: widget.initialCountryText,
@@ -165,7 +165,7 @@ class _NPhoneInputWidgetState extends State<NPhoneInputWidget> {
                   controller: widget.phoneController,
                   selectedCountry: _selectedCountry,
                   showLabel: widget.showLabels,
-                  label: widget.phoneLabel,
+                  // label: widget.phoneLabel,
                   labelStyle: widget.labelStyle,
                   showLeftIcon: widget.showLeftIcon,
                   leftIcon: widget.leftIcon,
