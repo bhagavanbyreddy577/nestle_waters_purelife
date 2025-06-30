@@ -45,6 +45,77 @@ class SignupScreen1 extends StatelessWidget {
             _space(height: 20),
             NTextspan(title: NTexts.firstName),
             _space(height: 8),
+            
+// Sign In and Sign up tab Bar Design
+/* 
+            Container(
+              // margin: const EdgeInsets.all(15.0),
+              // padding: const EdgeInsets.all(3.0),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.blueAccent),
+                borderRadius: BorderRadius.all(
+                    Radius.circular(10.0) //      <--- border radius here
+                    ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(right: 4, left: 4),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: ElevatedButton(
+                        //backgroundColor:Colors.blue,
+                        onPressed: () {
+                          print("ButtonPress");
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blueAccent,
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          side: BorderSide(
+                              // width: 1.0,
+                               color: Colors.white,
+                              // strokeAlign: 0,
+                              ),
+                        ),
+                        child: Text('Sign In',
+                            selectionColor: Colors.white,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 13)),
+                      ),
+                    ),
+                    SizedBox(width: 4),
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          //context.read<LoginBloc>().add(ToggleLoginMethod(true));
+                        },
+                        style: ElevatedButton.styleFrom(
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            side: BorderSide(
+                                // width: 1.0,
+                                 color: Colors.white,
+                                // strokeAlign: 0,
+                                )),
+                        child: Text('Sign Up',
+                            selectionColor: Colors.white,
+                            style: TextStyle(
+                                color: Colors.lightBlue,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 13)),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+*/
             _firstName(),
             _space(),
             NTextspan(title: NTexts.lastName),
@@ -71,8 +142,7 @@ class SignupScreen1 extends StatelessWidget {
             buildTopAlignedCheckbox(
               value: null != null,
               // onChanged: (val) => setState(() => receiveOffers = val!),
-              text:
-                  NTexts.termsandcondition,
+              text: NTexts.termsandcondition,
               onChanged: (bool) {},
             ),
 
@@ -80,8 +150,7 @@ class SignupScreen1 extends StatelessWidget {
             buildTopAlignedCheckbox(
               textWidget: RichText(
                 text: TextSpan(
-                  text:
-                      NTexts.termsandprivacy,
+                  text: NTexts.termsandprivacy,
                   style: TextStyle(color: Colors.black, fontSize: 15),
                   children: [
                     TextSpan(
@@ -97,43 +166,6 @@ class SignupScreen1 extends StatelessWidget {
               onChanged: (bool) {},
               value: null != null,
             ),
-
-            // CheckboxListTile(
-            //         value: null != null,
-            //         onChanged: (_) {
-            //           //context.read<Bloc>().add(ToggleReceiveOffers());
-            //         },
-            //         title: Text(
-            //           'I would like to receive offers, and be contacted by, or on behalf of NESTLÉ® through phone, SMS, and Email, about NESTLÉ®, its brands, special offers, consumer research and promotions is required.',
-            //           style: TextStyle(fontSize: 14),
-            //           textAlign: TextAlign.start,
-            //         ),
-            //         controlAffinity: ListTileControlAffinity.leading,
-            // ),
-
-            //       CheckboxListTile(
-            //         // value: state.isOver18,
-            //         onChanged: (_) {
-            //           //context.read<CheckboxBloc>().add(ToggleIsOver18());
-            //         },
-            //         title: RichText(
-            //           text: TextSpan(
-            //             text:
-            //                 'I am over 18 years of age and I agree to NESTLÉ® processing my personal data in accordance with the NESTLÉ® ',
-            //             style: TextStyle(color: Colors.black, fontSize: 14),
-            //             children: [
-            //               TextSpan(
-            //                 text: 'Privacy Notice.',
-            //                 style: TextStyle(
-            //                   color: Colors.blue,
-            //                   decoration: TextDecoration.underline,
-            //                 ),
-            //               )
-            //             ],
-            //           ),
-            //         ),
-            //         controlAffinity: ListTileControlAffinity.leading, value: null,
-            //       ),
             SizedBox(height: 24),
             ElevatedButton(
               // onPressed: state.isOver18
@@ -193,12 +225,12 @@ class SignupScreen1 extends StatelessWidget {
 
   _lastName() {
     return NTextField(
-       hintText: 'Enter Last Name',
-       inputFormatters: [
+      hintText: 'Enter Last Name',
+      inputFormatters: [
         LengthLimitingTextInputFormatter(50),
         FilteringTextInputFormatter.allow(RegExp((r'[a-zA-Z\s]'))),
       ],
-      keyboardType: TextInputType.name, 
+      keyboardType: TextInputType.name,
       // decoration: InputDecoration(),
     );
   }
@@ -226,7 +258,7 @@ class SignupScreen1 extends StatelessWidget {
   _newPassword() {
     return NTextField(
       //title: 'New Password',
-      hintText: 'Enter New Password', 
+      hintText: 'Enter New Password',
       //decoration: InputDecoration(),
     );
   }
