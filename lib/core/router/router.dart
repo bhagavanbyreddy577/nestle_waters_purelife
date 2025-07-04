@@ -5,6 +5,7 @@ import 'package:nestle_waters_purelife/core/router/routes.dart';
 import 'package:nestle_waters_purelife/features/account/presentation/screens/account_screen.dart';
 import 'package:nestle_waters_purelife/features/auth/signup/presentation/screens/signup_screen.dart';
 import 'package:nestle_waters_purelife/features/cart/presentation/screens/cart_screen.dart';
+import 'package:nestle_waters_purelife/features/countryselection/country_selection.dart';
 import 'package:nestle_waters_purelife/features/home/presentation/screens/home_screen.dart';
 import 'package:nestle_waters_purelife/features/subscription/presentation/screens/subsription_screen.dart';
 import 'package:nestle_waters_purelife/intro_screen.dart';
@@ -34,6 +35,11 @@ class Router {
       name: Routes.signup,
       path: Routes.signupScreen,
       builder: (context, state) => const SignupScreen(),
+    ),
+     GoRoute(
+      name: Routes.countrydropdown,
+      path: Routes.countryDropdownScreen,
+      builder: (context, state) =>  CountryDropdown(),
     ),
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) =>
@@ -95,7 +101,7 @@ class Router {
   static GoRouter createRouter() {
     return GoRouter(
       navigatorKey: _rootNavigatorKey,
-      initialLocation: Routes.signupScreen,
+      initialLocation: Routes.countryDropdownScreen,
       routes: routes,
       // Add your global redirect logic here if needed
       // redirect: (context, state) { ... },

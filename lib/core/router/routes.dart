@@ -9,6 +9,8 @@ class Routes {
   static const String subscription = 'subscription';
   static const String cart = 'cart';
   static const String account = 'account';
+  static const String countrydropdown = 'countrydropdown';
+
 
   // Route paths
   static const String splashScreen = '/splash';
@@ -20,4 +22,6 @@ class Routes {
   static const String accountScreen = '/account';
   static const String profileScreen = 'profile';
   static const String nestedProfileScreen = '/account/profile';
+  static const String countryDropdownScreen = '/countrydropdown';
+
 }
