@@ -81,7 +81,7 @@ class NEmailTextField extends StatefulWidget {
     this.contentPadding,
     this.fillColor,
     this.borderColor,
-    this.borderRadius = 8.0,
+    this.borderRadius = 1.0,
     this.borderWidth = 1.0,
     this.errorText,
     this.enabled = true,

@@ -6,16 +6,22 @@ class Routes {
   static const String intro = 'intro';
   static const String signup = 'signup';
   static const String signup1 = 'signup1';
+  static const String singin  = "singin";
   static const String home = 'home';
   static const String subscription = 'subscription';
   static const String cart = 'cart';
   static const String account = 'account';
+  static const String authscreen = 'authscreen';
+
 
   // Route paths
   static const String splashScreen = '/splash';
   static const String introScreen = '/intro';
   static const String signupScreen = '/signup';
+  static const String singinScreen  = "/singin";
   static const String signupScreen1 = '/signup1';
+  static const String authScreendemo = '/authscreen';
+
   static const String homeScreen = '/home';
   static const String subscriptionScreen = '/subscription';
   static const String cartScreen = '/cart';

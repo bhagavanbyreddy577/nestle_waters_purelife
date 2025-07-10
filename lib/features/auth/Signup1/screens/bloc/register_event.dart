@@ -1,8 +1,3 @@
-
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nestle_waters_purelife/features/auth/Signup1/bloc/register_bloc.dart';
-import 'package:nestle_waters_purelife/features/auth/Signup1/bloc/register_state.dart';
-
 // class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
 //   RegistrationBloc() : super(RegistrationState()) {
 //     on<FirstNameChanged>((event, emit) {

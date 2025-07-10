@@ -8,7 +8,10 @@ class NTexts {
   static const String NContinue = "Continue";
 
   // -- Authentication Forms
-  static const String firstName = "First Name";
+  static const String firstName = "Enter your full name";
+  static const String phonenumber = "Enter your phone number";
+  static const String emailID = "Enter your email address";
+
   static const String lastName = "Last Name";
   static const String email = "E-Mail";
   static const String password = "Password";
@@ -23,8 +26,7 @@ class NTexts {
   static const String termsOfUse = "Terms of use";
   static const String createpassword = "Create Password";
   static const String confirmPassword = "Confirm Password";
-   static const String emailID = "Email ID";
-
+  
   static const String signupheader = "Log in to Nestle Water\nyour reliable\nhydration Partner";
   static const String signupsubheader = "We need a few more details to create\nyour account.";
   static const String termsandcondition = "I would like to receive offers, and be contacted by, or on behalf of NESTLÉ® through phone, SMS, and Email, about NESTLÉ®, its brands, special offers, consumer research and promotions is required.";

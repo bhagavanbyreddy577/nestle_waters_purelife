@@ -12,13 +12,13 @@ class NTextspan extends StatelessWidget {
                 children: <InlineSpan>[
                   WidgetSpan(
                     child: Text(
-                      title,
+                      title,style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 15),
                     ),
                   ),
                   WidgetSpan(
                     child: Text(
                       '*',
-                      style: TextStyle(color: Colors.red),
+                      style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 17),
                     ),
                   ),
                 ],
