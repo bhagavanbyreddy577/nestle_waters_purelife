@@ -39,18 +39,18 @@ class Signin extends StatelessWidget {
                   ),
                   textAlign: TextAlign.left,
                 ),
-                SizedBox(height: 2),
-                Text("Sign In If you already have an account with us",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16,
-                        color: Colors.black),
+                // SizedBox(height: 2),
+                // Text("Sign In If you already have an account with us",
+                //     style: TextStyle(
+                //         fontWeight: FontWeight.w400,
+                //         fontSize: 12,
+                //         color: Colors.black),
+                //     textAlign: TextAlign.left),
+                SizedBox(height: 24),
+                Text("Enter your email or phone number for\nOTP",
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
                     textAlign: TextAlign.left),
-                SizedBox(height: 20),
-                Text("Enter your email or phone number for OTP",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                    textAlign: TextAlign.left),
-                SizedBox(height: 10),
+                SizedBox(height: 8),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -59,10 +59,10 @@ class Signin extends StatelessWidget {
                       height: 50,
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.black, width: 1.0),
-                        borderRadius: BorderRadius.circular(2),
+                        borderRadius: BorderRadius.circular(4),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
+                        padding: const EdgeInsets.only(left: 7.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -124,74 +124,94 @@ class Signin extends StatelessWidget {
                         ),
                       ),
                     SizedBox(height: 25),
-                    Container(
-                      decoration: BoxDecoration(color: Colors.white),
-                      height: 42,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(bottom: 22),
-                            child: Checkbox(
-                                value: state.receiveOffers,
-                                onChanged: (_) {
-                                  context
-                                      .read<SigninBloc>()
-                                      .add(ToggleReceiveOffers());
-                                }),
-                          ),
-                          Expanded(
-                            child: RichText(
-                              text: TextSpan(
-                                  style: TextStyle(color: Colors.black),
-                                  children: [
-                                    TextSpan(
-                                        text:
-                                            'By Continuing I agree to Nestle Waters '),
-                                    TextSpan(
-                                        text:
-                                            'Privacy Policy,Terms and Conditions',
-                                        style: TextStyle(
-                                            color: Colors.blue,
-                                            decoration:
-                                                TextDecoration.underline),
-                                        recognizer: TapGestureRecognizer()
-                                          ..onTap = () {
-                                            //open Policy link
-                                          }),
-                                    // TextSpan(text: ',Terms and Conditions'),
-                                  ]),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 25),
 
-                    ElevatedButton(
-                      clipBehavior: Clip.antiAlias,
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(10.0),
-                              topLeft: Radius.circular(10.0),
-                              bottomLeft: Radius.circular(10.0),
-                              bottomRight: Radius.circular(10.0)),
-                        ),
-                        backgroundColor: state.isValid && state.receiveOffers
-                            ? Colors.blue
-                            : Colors.grey,
-                        minimumSize: Size(double.infinity, 40),
-                        textStyle: TextStyle(fontSize: 16),
-                      ),
-                      onPressed: () {},
-                      child: Text('Continue',
-                          selectionColor: Colors.white,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 15)),
-                    ),
+                    state.isValid
+                        ? Container(
+                            decoration: BoxDecoration(color: Colors.white),
+                            height: 42,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(bottom: 22),
+                                  child: Checkbox(
+                                      side: BorderSide(
+                                      color: Color(0xFF0055A5), width: 2.0),
+                                      focusColor: const Color(0xFF0055A5),
+                                      activeColor: const Color(0xFF0055A5),
+                                      value: state.receiveOffers,
+                                      onChanged: (_) {
+                                        context
+                                            .read<SigninBloc>()
+                                            .add(ToggleReceiveOffers());
+                                      }),
+                                ),
+                                Expanded(
+                                  child: RichText(
+                                    text: TextSpan(
+                                        style: TextStyle(color: Colors.black),
+                                        children: [
+                                          TextSpan(
+                                              text:
+                                                  'By Continuing I agree to Nestle Waters '),
+                                          TextSpan(
+                                              text:
+                                                  'Privacy Policy,Terms and Conditions',
+                                              style: TextStyle(
+                                                  color: Colors.blue,
+                                                  decoration:
+                                                      TextDecoration.underline),
+                                              recognizer: TapGestureRecognizer()
+                                                ..onTap = () {
+                                                  //open Policy link
+                                                }),
+                                          // TextSpan(text: ',Terms and Conditions'),
+                                        ]),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        : SizedBox(),
+
+                    state.isValid ? SizedBox(height: 25) : SizedBox(),
+
+                    Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          SignInContinuebutton(
+                            isEnabled: state.isValid && state.receiveOffers,
+                            onPressed: () {
+                              //Navigate to OTP Screen
+                            },
+                          )
+                        ]),
+                    //state.isValid && state.receiveOffers)
+                    // ElevatedButton(
+                    //   clipBehavior: Clip.antiAlias,
+                    //   style: ElevatedButton.styleFrom(
+                    //     shape: RoundedRectangleBorder(
+                    //       borderRadius: BorderRadius.only(
+                    //           topRight: Radius.circular(10.0),
+                    //           topLeft: Radius.circular(10.0),
+                    //           bottomLeft: Radius.circular(10.0),
+                    //           bottomRight: Radius.circular(10.0)),
+                    //     ),
+                    //     backgroundColor: state.isValid && state.receiveOffers
+                    //         ? Colors.blue
+                    //         : Colors.grey,
+                    //     minimumSize: Size(double.infinity, 40),
+                    //     textStyle: TextStyle(fontSize: 16),
+                    //   ),
+                    //   onPressed: () {},
+                    //   child: Text('Continue',
+                    //       selectionColor: Colors.white,
+                    //       style: TextStyle(
+                    //           color: Colors.white,
+                    //           fontWeight: FontWeight.w500,
+                    //           fontSize: 15)),
+                    // ),
                   ],
                 ),
               ],
@@ -201,4 +221,110 @@ class Signin extends StatelessWidget {
       ),
     );
   }
+}
+
+//Created the Custome
+
+class SignInContinuebutton extends StatelessWidget {
+  final bool isEnabled;
+  final VoidCallback? onPressed;
+
+  const SignInContinuebutton(
+      {super.key, required this.isEnabled, this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(34),
+        child: CustomPaint(
+          painter: isEnabled ? StateValid() : StateInValid(),
+          child: Container(
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey, width: 1),
+                borderRadius: BorderRadius.circular(34)),
+            height: 40, //32,
+            width: 135,
+            padding: const EdgeInsets.symmetric(horizontal: 6),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 9.0, bottom: 2),
+                  child: Text(
+                    'Continue',
+                    style: TextStyle(
+                      color: isEnabled ? Colors.white : const Color(0xFFC5C5C5),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 35),
+                Icon(
+                  size: 20,
+                  Icons.arrow_forward,
+                  color: isEnabled ? Colors.white : const Color(0xFFC5C5C5),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class StateValid extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint1 = Paint()..color = const Color(0xFFDA2188); // Pink
+    final paint2 = Paint()..color = const Color(0xFF00386D); // Navy
+
+    final path1 = Path()
+      ..lineTo(size.width * 0.75, 0)
+      ..lineTo(size.width * 0.70, size.height)
+      ..lineTo(0, size.height)
+      ..close();
+
+    final path2 = Path()
+      ..moveTo(size.width * 0.75, 0)
+      ..lineTo(size.width, 0)
+      ..lineTo(size.width, size.height)
+      ..lineTo(size.width * 0.70, size.height)
+      ..close();
+
+    canvas.drawPath(path1, paint1);
+    canvas.drawPath(path2, paint2);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => false;
+}
+
+class StateInValid extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint1 = Paint()..color = const Color(0xFFFFFFFF); // Pink
+    final paint2 = Paint()..color = const Color(0xFFFFFFFF); // Navy
+
+    final path1 = Path()
+      ..lineTo(size.width * 0.75, 0)
+      ..lineTo(size.width * 0.70, size.height)
+      ..lineTo(0, size.height)
+      ..close();
+
+    final path2 = Path()
+      ..moveTo(size.width * 0.75, 0)
+      ..lineTo(size.width, 0)
+      ..lineTo(size.width, size.height)
+      ..lineTo(size.width * 0.70, size.height)
+      ..close();
+
+    canvas.drawPath(path1, paint1);
+    canvas.drawPath(path2, paint2);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => false;
 }

@@ -10,6 +10,9 @@ class SignupState {
   final bool termsandcondition;
   final String fullName;
   final bool isFullNameValid;
+  final String fullNameErrorMesaage;
+  final String email;
+  final bool isEmailValid;
 
 
   SignupState({
@@ -22,7 +25,10 @@ class SignupState {
     this.receiveOffers = false,
     this.termsandcondition = false,
     this.fullName = '',
+    this.fullNameErrorMesaage = '',
     this.isFullNameValid = false,
+    this.email = '', 
+    this.isEmailValid = false,
   });
 
   factory SignupState.initial() => SignupState(
@@ -41,7 +47,10 @@ class SignupState {
     bool? receiveOffers,
     bool? termsandcondition,
     String? fullName,
-    bool? isFullNameValid
+    bool? isFullNameValid,
+    String? fullNameErrorMesaage,
+    String? email, 
+    bool? isEmailValid,
 
   }) {
     return SignupState(
@@ -54,8 +63,10 @@ class SignupState {
       receiveOffers: receiveOffers ?? this.receiveOffers,
       termsandcondition: termsandcondition ?? this.termsandcondition,
       fullName : fullName ?? this.fullName,
-      isFullNameValid : isFullNameValid ?? this.isFullNameValid
-      
+      isFullNameValid : isFullNameValid ?? this.isFullNameValid,
+      fullNameErrorMesaage : fullNameErrorMesaage ?? this.fullNameErrorMesaage,
+      email: email ?? this.email,
+      isEmailValid:  isEmailValid ?? this.isEmailValid,
     );
   }
 }

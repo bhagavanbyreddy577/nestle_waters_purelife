@@ -10,6 +10,11 @@ class FullNameChanged extends SignupEvent {
   FullNameChanged(this.fullName);
 }
 
+class EmailChanged extends SignupEvent {
+  final String email;
+  EmailChanged(this.email);
+}
+
 class CountryCodeChanged extends SignupEvent {
   final String code;
   CountryCodeChanged(this.code);

@@ -1,9 +1,8 @@
-import 'dart:collection';
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nestle_waters_purelife/features/auth/signin/screens/signin.dart';
 import 'package:nestle_waters_purelife/features/auth/signup/presentation/bloc/signup_bloc.dart';
 import 'package:nestle_waters_purelife/features/auth/signup/presentation/bloc/signup_event.dart';
 import 'package:nestle_waters_purelife/features/auth/signup/presentation/bloc/signup_state.dart';
@@ -40,52 +39,78 @@ class Signup extends StatelessWidget {
               children: [
                 _space(height: 20),
                 Text("Create an account in Seconds!",
-                    style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
+                    style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20),
                     textAlign: TextAlign.left),
                 _space(height: 20),
                 NTextspan(title: NTexts.firstName),
                 _space(height: 10),
-                TextField(
-                  controller: firstNameController,
-                  decoration: InputDecoration(
-                    errorText: state.isFullNameValid ? null : 'Enter full name',
-                    hintText: 'Your first name and last name',
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(4)),
-                      borderSide: BorderSide(width: 1, color: Colors.black),
+                SizedBox(
+                  height: 40,
+                  child: TextFormField(
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Enter full name";
+                      }
+                    },
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                    controller: firstNameController,
+                    decoration: InputDecoration(
+                      contentPadding:
+                          EdgeInsets.symmetric(vertical: 0.0, horizontal: 12.0),
+                      hintText: 'Your first name and last name',
+                      hintStyle: TextStyle(fontSize: 16),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(4)),
+                        borderSide: BorderSide(width: 1, color: Colors.black),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(4)),
+                        borderSide: BorderSide(width: 1, color: Colors.black),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(2)),
+                          borderSide:
+                              BorderSide(width: 1, color: Colors.black)),
+                      border: OutlineInputBorder(),
+                      errorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(2)),
+                          borderSide:
+                              BorderSide(width: 1, color: Colors.black)),
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(4)),
-                      borderSide: BorderSide(width: 1, color: Colors.black),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(2)),
-                        borderSide: BorderSide(width: 1, color: Colors.black)),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(2)),
-                        borderSide: BorderSide(
-                          width: 1,
-                        )),
-                    errorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(2)),
-                        borderSide: BorderSide(width: 1, color: Colors.black)),
+                    inputFormatters: [
+                      LengthLimitingTextInputFormatter(50),
+                      FilteringTextInputFormatter.allow(
+                          RegExp((r'[a-zA-Z\s]'))),
+                    ],
+                    keyboardType: TextInputType.text,
+                    onChanged: (val) {
+                      context.read<SignupBloc>().add(
+                            FullNameChanged(val),
+                          );
+                    },
                   ),
-                  inputFormatters: [
-                    LengthLimitingTextInputFormatter(50),
-                    FilteringTextInputFormatter.allow(RegExp((r'[a-zA-Z\s]'))),
-                  ],
-                  keyboardType: TextInputType.text,
-                  onChanged: (val) {
-                    context.read<SignupBloc>().add(
-                          FullNameChanged(val),
-                        );
-                  },
                 ),
-                _space(),
+                _space(height: 5),
+
+                // if (!state.isFullNameValid)
+                //  Text(
+                //     state.fullNameErrorMesaage,
+                //     style: TextStyle(color: Colors.red),
+                //  ),
+
+                state.isFullNameValid
+                    ? Text("")
+                    : Text(state.fullNameErrorMesaage,
+                        style: TextStyle(color: Colors.red)),
+
+                if (!state.isFullNameValid)
+                     SizedBox(height: 2) else
+                     SizedBox(height: 16),
+
                 NTextspan(title: NTexts.phonenumber),
                 _space(height: 10),
                 Container(
-                  height: 50,
+                  height: 40,
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.black, width: 1.0),
                     borderRadius: BorderRadius.circular(2),
@@ -115,13 +140,15 @@ class Signup extends StatelessWidget {
                         Expanded(
                           child: TextField(
                             controller: phoneController,
-                            keyboardType: TextInputType.text,
+                            keyboardType: TextInputType.phone,
                             onChanged: (val) {
                               context.read<SignupBloc>().add(
                                     InputChanged(val.trim()),
                                   );
                             },
                             decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 10),
                               hintText: "Enter your mobile Number",
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
@@ -134,19 +161,72 @@ class Signup extends StatelessWidget {
                     ),
                   ),
                 ),
+                _space(height: 5),
                 if (state.errorMessage != null)
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Text(
-                      state.errorMessage!,
-                      style: TextStyle(color: Colors.red),
-                    ),
+                  Text(
+                    state.errorMessage!,
+                    style: TextStyle(color: Colors.red),
                   ),
                 _space(),
                 NTextspan(title: NTexts.emailID),
                 _space(height: 10),
-                _email(),
-                _space(height: 20),
+               
+                SizedBox(
+                  height: 40,
+                  child: TextFormField(
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Enter Email name";
+                      }
+                    },
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                    controller: emailController,
+                    decoration: InputDecoration(
+                      contentPadding:
+                          EdgeInsets.symmetric(vertical: 0.0, horizontal: 12.0),
+                      hintText: 'Your Email address',
+                      hintStyle: TextStyle(fontSize: 16),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(4)),
+                        borderSide: BorderSide(width: 1, color: Colors.black),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(4)),
+                        borderSide: BorderSide(width: 1, color: Colors.black),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(2)),
+                          borderSide:
+                              BorderSide(width: 1, color: Colors.black)),
+                      border: OutlineInputBorder(),
+                      errorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(2)),
+                          borderSide:
+                              BorderSide(width: 1, color: Colors.black)),
+                    ),
+                    inputFormatters: [
+                     LengthLimitingTextInputFormatter(100),
+                    ],
+                    keyboardType: TextInputType.text,
+                    onChanged: (val) {
+                      context.read<SignupBloc>().add(
+                            EmailChanged(val),
+                          );
+                    },
+                  ),
+                ),
+                _space(height: 5),
+                state.isEmailValid
+                    ? Text("")
+                    : Text("Enter Valid Email",
+                        style: TextStyle(color: Colors.red)),
+
+                state.isEmailValid
+                    ? SizedBox(height: 2)
+                    : SizedBox(height: 16),
+
+                // _email(),
+                _space(height: 10),
                 Container(
                   decoration: BoxDecoration(color: Colors.white),
                   height: 90,
@@ -156,6 +236,9 @@ class Signup extends StatelessWidget {
                       Container(
                         margin: EdgeInsets.only(bottom: 65),
                         child: Checkbox(
+                            side: BorderSide(color: Color(0xFF0055A5), width: 2.0),
+                            focusColor: const Color(0xFF0055A5),
+                            activeColor:const Color(0xFF0055A5),
                             value: state.termsandcondition,
                             onChanged: (_) {
                               context
@@ -167,7 +250,8 @@ class Signup extends StatelessWidget {
                         child: RichText(
                           textAlign: TextAlign.start,
                           text: TextSpan(
-                              style: TextStyle(color: Colors.black),
+                              style :TextStyle(fontSize: 14,
+                                        color: Colors.black),
                               children: [
                                 TextSpan(text: NTexts.termsandcondition),
                               ]),
@@ -187,6 +271,9 @@ class Signup extends StatelessWidget {
                       Container(
                         margin: EdgeInsets.only(bottom: 45),
                         child: Checkbox(
+                            side: BorderSide(color: Color(0xFF0055A5), width: 2.0),
+                            focusColor: const Color(0xFF0055A5),
+                            activeColor:const Color(0xFF0055A5),
                             value: state.receiveOffers,
                             onChanged: (_) {
                               context
@@ -200,11 +287,13 @@ class Signup extends StatelessWidget {
                               style: TextStyle(color: Colors.black),
                               children: [
                                 TextSpan(
+                                    style :TextStyle(fontSize: 14,
+                                        color: Colors.black),
                                     text:
                                         'I am over 18 years of age and I agree to by Proceeding I agree to Nestale Waters '),
                                 TextSpan(
                                     text: 'Privacy Policy,Terms and Conditions',
-                                    style: TextStyle(
+                                    style: TextStyle(fontSize: 14,
                                         color: Colors.blue,
                                         decoration: TextDecoration.underline),
                                     recognizer: TapGestureRecognizer()
@@ -219,32 +308,48 @@ class Signup extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 16),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0)),
-                    ),
-                    backgroundColor: state.isValid &&
+                Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      SignInContinuebutton(
+                        isEnabled: state.isValid &&
                             state.isFullNameValid &&
                             state.receiveOffers &&
-                            state.termsandcondition
-                        ? Colors.blue
-                        : Colors.grey,
-                    minimumSize: Size(double.infinity, 40),
-                    textStyle: TextStyle(fontSize: 16),
-                  ),
-                  onPressed: () {},
-                  child: Text('Create Account',
-                      selectionColor: Colors.white,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 15)),
-                ),
+                            state.termsandcondition,
+                        onPressed: () {
+                          print("Naviagate To OTP Screen");
+                          //Navigate to OTP Screen
+                        },
+                      )
+                    ]),
+
+                // ElevatedButton(
+                //   style: ElevatedButton.styleFrom(
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.only(
+                //           topRight: Radius.circular(10.0),
+                //           topLeft: Radius.circular(10.0),
+                //           bottomLeft: Radius.circular(10.0),
+                //           bottomRight: Radius.circular(10.0)),
+                //     ),
+                //     backgroundColor: state.isValid &&
+                //             state.isFullNameValid &&
+                //             state.receiveOffers &&
+                //             state.termsandcondition
+                //         ? Colors.blue
+                //         : Colors.grey,
+                //     minimumSize: Size(double.infinity, 40),
+                //     textStyle: TextStyle(fontSize: 16),
+                //   ),
+                //   onPressed: () {},
+                //   child: Text('Create Account',
+                //       selectionColor: Colors.white,
+                //       style: TextStyle(
+                //           color: Colors.white,
+                //           fontWeight: FontWeight.w500,
+                //           fontSize: 15)),
+                // ),
                 _space(height: 20),
               ],
             ),
@@ -259,10 +364,14 @@ class Signup extends StatelessWidget {
   }
 
   _email() {
-    return NEmailTextField(
-      emailController: emailController,
-      showLabel: false,
-      borderColor: Colors.black,
+    return SizedBox(
+      //height: 48,
+      child: NEmailTextField(
+        contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        emailController: emailController,
+        showLabel: false,
+        borderColor: Colors.black,
+      ),
     );
   }
 }

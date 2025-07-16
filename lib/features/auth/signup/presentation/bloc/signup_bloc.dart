@@ -66,9 +66,29 @@ class SignupBloc extends Bloc<SignupEvent, SignupState> {
         state.copyWith(
           fullName: event.fullName,
           isFullNameValid: isfullnameValid,
+          fullNameErrorMesaage: 'Invalid full Name',
+        ),
+      );
+    });
+
+    on<EmailChanged>((event, emit) {
+      emit(state.copyWith(input: state.email));
+      final isemailvalid = _isValidEmail(event.email);
+      emit(
+        state.copyWith(
+          email: event.email,
+          isEmailValid: isemailvalid,
           //errorMessage: 'Enter your full Name',
         ),
       );
     });
   }
+}
+
+// //set the validation Email
+bool _isValidEmail(String input) {
+  final emailRegExp = RegExp(
+    r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+  );
+  return emailRegExp.hasMatch(input);
 }
